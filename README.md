@@ -10,7 +10,7 @@
 
 - `literature/`：核心论文阅读卡、BibTeX及检索范围说明。
 - `Docs/LITERATURE_REVIEW_AND_POSITIONING.md`：论文比较、创新边界与候选定位。`Docs/RESEARCH_PLAN_V1.md`：研究假设、阶段路线和冻结门槛。
-- `Docs/DATASET_REDISTILLATION_V1.md`：新数据集规格、相机/地面/号码需求和质量门禁。
+- `Docs/DATASET_REDISTILLATION_V1.md`：新数据集规格、相机/地面/号码需求和质量门禁。`Docs/SOURCE_ENGINE_AUDIT_V1.md`：源工程实际入口与实现限制。
 - `Docs/REAL_DATA_SPLITS_V1.md`：真实数据来源、难度分层和比赛级切分原则。
 - `Docs/EXPERIMENT_MATRIX_V1.md`：检测、姿态、跟踪、训练方式及模型尺寸对照。
 - `protocols/`：未来冻结协议；运行前需写入全部绝对参数。
@@ -31,4 +31,5 @@
 5. 号码渲染、长边相机和绿色地面均须先经过UE真实短样与读回验收；方案文件不代表功能已经实现。
 
 详见 [研究方案](Docs/RESEARCH_PLAN_V1.md) 和 [文献索引](literature/README.md)。
+
 

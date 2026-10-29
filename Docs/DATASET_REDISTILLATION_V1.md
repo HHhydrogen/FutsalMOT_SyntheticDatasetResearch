@@ -11,7 +11,7 @@
 | 球衣号码 | 旧图像无清晰号码，缺少外观线索和号码字段 | 在球衣正/背面加入号码；序列内实体号码稳定、队内唯一；渲染分辨率考虑可读性，同时保存身份到号码映射和可见/被遮挡/不可读状态 | UE实际渲染短样；号码mesh/材质读回；裁剪可读率；标签字段与图像/ID一致性 |
 | 标注闭环 | 需统一检测、Pose、身份和号码输出 | 同步RGB、instance mask、bbox、身份、Pose/world与visibility、球衣号码/可读状态、相机标定和轨迹 | 数据契约schema、跨模态一致性和轨迹连续性验收 |
 
-源项目已有green floor变体算法与appearance seed球衣系统，可参考 [绿色变体方案](../../FutsalMOT_UEDataset/Docs/engineering/GREEN_FLOOR_VARIATION.md) 和 [seeded kit接回](../../FutsalMOT_UEDataset/Docs/engineering/POSE_SEEDED_KIT_INTEGRATION.md)。它们的既有验收不自动覆盖新长边相机、号码功能或新数据版本。号码WIP必须单独查验，不得假设能直接用或删除。
+相机与号码源代码/配置已静态核对，边界见[源工程审计](SOURCE_ENGINE_AUDIT_V1.md)：运行时相机当前为C1–C5锚点+可选固定左半场P01，不能只靠JSON增加更多Partial机位；号码UV是原型，正式批产仍关闭。源项目已有green floor变体算法与appearance seed球衣系统，可参考 [绿色变体方案](../../FutsalMOT_UEDataset/Docs/engineering/GREEN_FLOOR_VARIATION.md) 和 [seeded kit接回](../../FutsalMOT_UEDataset/Docs/engineering/POSE_SEEDED_KIT_INTEGRATION.md)。它们的既有验收不自动覆盖新长边相机、号码功能或新数据版本。号码WIP必须单独查验，不得假设能直接用或删除。
 
 ## 相机面板建议
 
@@ -38,3 +38,4 @@
 5. mask、bbox、Pose和ID共帧对齐；Pose点和真实可见性采用明确的schema与unknown规则。
 6. 数据split按比赛/合成seed组固定；同seed所有机位和派生外观版本不跨split。
 7. 独立审核短样和收据后才能完整批产；未通过项目保留诊断，不进入训练。
+
