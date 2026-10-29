@@ -1,6 +1,6 @@
 # 新合成数据集规格草案 v1
 
-新版本输出至 `G:/FutsalMOT_Dataset/synthetic_research_v1`。这份文档只定义目标规格；它不表示UE功能、材质或号码已经验收。
+新版本输出至 `G:/FutsalMOT_Dataset/synthetic_research_v1`。这份文档只定义目标规格；它不表示UE功能、材质或号码已经验收。长边视角、绿色地面和号码是数据域匹配/契约要求，不被预设为论文亮点。
 
 ## 问题和改动
 
@@ -38,4 +38,5 @@
 5. mask、bbox、Pose和ID共帧对齐；Pose点和真实可见性采用明确的schema与unknown规则。
 6. 数据split按比赛/合成seed组固定；同seed所有机位和派生外观版本不跨split。
 7. 独立审核短样和收据后才能完整批产；未通过项目保留诊断，不进入训练。
+
 
