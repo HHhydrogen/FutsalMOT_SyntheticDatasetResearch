@@ -16,3 +16,11 @@
 ## 文档语言与Git
 - 面向研究团队的说明、注释和提交说明使用简体中文。
 - 只精确暂存本项目文件；不使用 `git add -A`，不提交媒体、Saved运行文件、环境、权重或无关WIP。
+
+## Stop gates and agent scope
+- The project has three flows: synthetic dataset generation, real match selection/model training, and paper writing. One agent invocation owns only one flow and stops after its gate report; it must never auto-start the next flow.
+- Follow `Docs/INTEGRATED_WORKFLOW_V1.md` and `Docs/DATASET_CONTRACT_V1.md`. Missing numeric budgets/schema/UIDs block execution; do not infer them.
+- Short-sample acceptance has at most one targeted repair after the initial attempt. A still-failing second sample is `FAIL_STOP`.
+- Training/evaluation run only frozen jobs. One retry is allowed only for a documented infrastructure interruption with byte-identical protocol; low scores never justify another run. Test evaluation is once after freeze, with at most one identical infra retry.
+- Paper delivery is one complete draft plus at most two full revision passes. Then hand off unresolved author choices and stop.
+- Every flow ends with `PASS`, `FAIL_STOP`, or `BLOCKED` and an evidence-based handoff. No open-ended searching, rendering, training, threshold tuning, or polishing.
