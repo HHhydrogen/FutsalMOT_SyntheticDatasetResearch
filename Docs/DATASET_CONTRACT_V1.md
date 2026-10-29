@@ -1,117 +1,79 @@
-# 新合成数据集结构与Schema契约 v1
+# 新合成数据集结构与Schema契约 v1（精简版）
 
-状态：结构冻结提案。对应JSON Schema草案位于`../schemas/v1/`，关键点采用`futsal_body12_v1`。第一次生成前必须对schema做针对性验证、把数量/分辨率/FPS/阈值等`TBD`解析为绝对值，并将所有schema SHA写入运行协议；后续变更需提升schema/dataset version。schema草案是设计交付，尚未接入生产validator。
+状态：结构冻结提案。机器可读schema位于`../schemas/v1/`，Pose采用`futsal_body12_v1`。这是设计文件，不是已经接入UE导出器/生产validator的实现。首次生成前，实操对话需校验schema、填入确切seed/帧数/camera/resolution/FPS与质量阈值，计算schema SHA并冻结；此后改变结构必须升schema/dataset版本。
 
-## 设计规则
+## 原则
 
-- 一个真实完整比赛是一个真实数据原子单元；一个完整模拟比赛/seed是一个合成原子单元。任何clip/camera/appearance variant都继承父比赛split，绝不单独随机分组。
-- 原始下载真实数据保持只读和原目录格式；不能为统一布局而移动或覆盖源文件。用source manifest/adapter读取或生成许可允许的派生视图。
-- 合成发布使用固定canonical结构；MOTChallenge的`img1/gt/seqinfo.ini`便于现有工具读取，同时保留唯一的rich `annotations.jsonl`作为上游标注源。YOLO/MOT/Pose文本标签只允许从它派生，不能手工编辑或反向覆盖。
-- Schema采用闭合对象（`additionalProperties: false`）；未知字段、额外目录/文件、未知enum、帧数/摘要不一致均fail closed。缺字段不能靠agent猜测补齐。
-- 正式数据使用只读版本发布。变更产生新dataset version和新fingerprint，禁止原地修改、重命名或把旧版文件覆盖成新版。
+- 一个seed代表一场完整模拟比赛，是不可拆分的输出单元；它的所有camera与帧在同一个split。
+- 数据集根目录已经是合成数据集，因此不再增加`synthetic/`父目录。
+- 每个seed只保留一个`seed_manifest.json`管理该seed元信息；不再重复拆`group.json`、`clip.json`、`unit_manifest.json`和`provenance/`。
+- 每个camera只保留camera元信息、RGB、权威逐帧标注和两类mask。MOT/YOLO标签是派生产物，在训练适配目录按需生成，不混入权威数据集。
+- JSON对象闭合（`additionalProperties:false`）；路径白名单来自根manifest。多字段不符、未知字段、额外文件、缺失文件均失败关闭。
+- 发布版本只读。改任何RGB/标注/路径/seed都必须产生新版本和新fingerprint。
 
-## 发布目录树
+## 最简目录树
 
 ```text
 G:/FutsalMOT_Dataset/synthetic_research_v1/
   README.md
-  dataset_manifest.json
-  schemas/v1/
+  dataset_manifest.json       # 整个数据集版本、split成员、数量、schema/代码绑定
+  checksums.sha256            # 一个全局文件，覆盖所有seed内容，不包含自身
+  schemas/v1/                 # 很小的结构定义，不随seed复制
     dataset_manifest.schema.json
-    unit_manifest.schema.json
+    seed_manifest.schema.json
     frame_annotation.schema.json
     trajectory_record.schema.json
-  synthetic/
-    train/
-      match_seed_<8位小写hex>/
-        unit_manifest.json
-        trajectory.jsonl
-        provenance/
-          generation_config.json
-          source_code.json
-          run_receipt.json
-          qc_report.json
-        cameras/
-          <camera_id>/
-            camera.json
-            seqinfo.ini
-            img1/000001.png ...  # 一基frame编号
-            annotations.jsonl     # 一行一帧；rich canonical source
-            mask/000001.png ...   # instance id mask
-            number_mask/000001.png ... #号码像素mask
-            gt/gt.txt             #从annotations派生
-            labels/det/000001.txt #如冻结启用，由annotations派生
-            labels/pose/000001.txt #如冻结启用，由annotations派生
-        checksums.sha256
-    dev/
-      match_seed_<8位小写hex>/... #完全相同结构
-  root_checksums.sha256
+    camera_state.schema.json
+    camera_metadata.schema.json
+    pose_schema_futsal_body12_v1.json
+  train/
+    seed_0000002a/
+      seed_manifest.json      #该seed的唯一元数据/生成参数/角色和号码表
+      trajectory.jsonl       #共享世界轨迹，一行一源帧
+      C1/
+        camera.json           #相机实际参数/标定
+        img1/000001.png       #RGB，一基六位帧号
+        annotations.jsonl    #一行一帧，唯一权威检测/ID/号码/Pose标注
+        mask/000001.png       #实例mask
+        number_mask/000001.png #号码实例mask
+      C2/...
+  dev/
+    seed_000000b4/...
 ```
 
-根目录不收真实下载视频；不放模型权重、临时EXR、调试PNG、notebook缓存、训练checkpoint或未登记文件。若冻结协议决定不开启某项派生产物，则它在`dataset_manifest.artifacts`中明确设为`false`，对应目录全体unit都不存在；不能部分unit自行增减。v1建议Pose和号码mask作为required task outputs；若号码生产未达到门槛，不得发布v1。
+每个seed目录直接是一个完整episode；`C1`、`C2`等目录名只允许来自根manifest冻结的camera ID列表。不同seed内camera目录必须同名、同schema。`frame_index=1`对应首张`img1/000001.png`和`trajectory.jsonl`第一行`step=0`；不使用零基图片文件名。
 
-## 命名与索引
+## 文件职责
 
-- `match_seed_<seed>`的seed固定8位小写hex。其内容必须是一场完整模拟episode的整段连续轨迹和它的所有相机输出；同seed所有输出进同一train/dev split。
-- `camera_id`取manifest中的固定字典。v1开始后不可通过自由文本新增camera目录。
-- 帧文件一基编号六位零填充：`000001.png`起。`annotations.jsonl.frame_index=1`对应`trajectory.jsonl.step=0`和首个Sequence source step；统一写`source_step`和`time_seconds`，禁止0/1基索引混用。
-- 空帧不删文件：RGB、instance mask、number mask和annotations仍各有对应记录。不可见对象保留在完整身份/可见性字段内，是否进入MOT/YOLO由固定导出规则决定。
-- unit内不放零散 clip 目录。若底层逻辑有多个时间窗，它们记录为同一unit的segments清单，且仍继承同一个split；各camera的frame/time映射要显式。
+- `dataset_manifest.json`：整个数据集的唯一目录索引和split真值。列出确切seed ID、train/dev、每seed帧数、camera IDs、schema版本、生成协议和代码SHA、任务产物开关、预期总数与存储上限。
+- `seed_manifest.json`：把原来分散在group/clip/provenance的字段合并。记录seed/root_seed、simulation trajectory UID、episode帧数/FPS、train/dev、camera IDs、十名球员的稳定entity/track/team/role/号码/mask ID映射、完整生成配置SHA、代码SHA和运行收据摘要。
+- `trajectory.jsonl`：每个源step保存10名球员的world位置/速度和身份；坐标米制。轨迹只存一份，不在camera下复制。
+- `camera.json`：该camera的UE actor/profile ID、分辨率、intrinsics和profile SHA。实际transform放在对应`annotations.jsonl.camera_state`，不另建状态目录。
+- `img1/`：无损RGB PNG。固定8-bit、3通道；图像尺寸每camera由根manifest定义。
+- `annotations.jsonl`：一行一帧，保存frame索引、时间、实际camera state和十个player对象。每个对象含稳定ID、team/role、jersey number、可见bbox/截断/visibility、号码可见/可读/朝向/号码bbox及固定Pose schema的12个点。
+- `mask/`：单通道8-bit PNG，0为背景、1..10固定映射十名球员；与RGB像素同尺寸、同帧。
+- `number_mask/`：单通道8-bit PNG，0为背景、32..41固定映射十名球员的号码印花像素；号码不可见时像素为0，annotation仍保留号码值及不可见原因。
+- `checksums.sha256`：根目录唯一完整性清单，列出按相对路径排序的所有train/dev内容（seed manifest、trajectory、camera metadata、annotations、RGB和mask）的SHA256；不包含自身和`dataset_manifest.json`。根manifest中的`root_fingerprint`按“去掉root_fingerprint字段后的canonical manifest + checksums.sha256原始字节”计算，不形成循环hash。
+- `schemas/v1/`：全数据版本共享的schema，不在每seed重复。结构SHA登记于dataset manifest。`checksums.sha256`只覆盖seed目录内容；schema SHA由根manifest逐项绑定。
 
-## 顶层清单必填信息
+## 权威标注与派生标签
 
-`dataset_manifest.json`要求：
+`annotations.jsonl`是bbox、ID、jersey和Pose唯一权威源。训练adapter在独立workspace中按需导出YOLO txt、MOT `gt.txt`、`seqinfo.ini`；导出不写回G盘正式数据。不在新数据集保留重复标注格式，避免两个GT彼此漂移。实例和号码mask是原始像素监督，不由bbox标签替代。
 
-- `schema`、`schema_version`、`dataset_id`、不可变`dataset_version`、创建时间和状态(`staging/released`)。
-- `units[]`：精确列出unit_id、split、seed、frame_count、camera_ids、expected artifacts、unit_manifest相对路径和SHA256。
-- `generation_protocol`：配置hash、代码bundle/hash、UE版本、trajectory source version、seed derivation policy、图像分辨率/FPS、相机profile及Pose schema ID。
-- `artifacts`：instance_mask、number_mask、pose、MOT、YOLO labels布尔开关；整个版本唯一，不可逐unit临时开关。
-- `identity_contract`：entity/track映射表、instance mask IDs、jersey number分配策略、号码mask IDs。
-- `split_policy`：synthetic train/dev unit ID全集；不可让生成器按帧/相机重新拆分。
-- `expected_counts`、存储上限、哈希算法与完整根fingerprint。
+每个帧记录严格含：`schema`, `schema_version`, `dataset_id`, `dataset_version`, `seed_id`, `camera_id`, `frame_index`, `source_step`, `time_seconds`, `pose_schema_id`, `camera_state`, `objects`。每帧十个人都保留，包括当帧不可见者；不可见bbox为null、pixel count为0、visibility按枚举填写，不能静默删track。
 
-`unit_manifest.json`包含dataset_id/version、unit_id、split、seed、source trajectory UID、frame数/时间范围、所有camera ID与相对路径、每实体稳定`entity_id/track_id/team/role/jersey_number`、生成attempt/config hash、收据与该unit实际文件清单。
+关键点schema固定为`futsal_body12_v1`，顺序是：left_shoulder、right_shoulder、left_elbow、right_elbow、left_wrist、right_wrist、left_hip、right_hip、left_knee、right_knee、left_ankle、right_ankle。该选择沿用旧工程的生产级12肢体点契约；历史文件名包含“coco17”不改变实际点数。visibility为`0=unknown/invalid`、`1=occluded`、`2=visible`。未知不得推断为可见。若研究需要脸部/头顶17点，必须先单独验收并建立新schema，不可在v1中暗改。
 
-## 每camera契约
+bbox统一为像素半开XYXY `[x1,y1,x2,y2]`，来源为instance mask的tight box；完全不可见为null。mask ID、号码mask ID和身份映射在seed manifest中逐一对应，跨帧不变。号码可见性字段是“像素中能否观察”的标签，不宣称OCR读数准确。
 
-### `camera.json`
+## 真实数据对接
 
-唯一记录camera_id、UE actor/sequence、图像宽高、intrinsics、world position/rotation、FOV/焦距、单位、逐帧或固定相机状态引用。值来自UE实际读回，不从task计划复制后冒充观测。若相机移动，每帧实际transform写状态JSONL；静态camera也保存实际状态和来源收据。
+下载数据保留原始位置、原目录和原许可，不拷贝进这个G盘合成根目录。模型阶段维护一个轻量的真实比赛split manifest：`source_id + upstream match/video ID + original clip IDs + source path + licence/reference + native format + adapter version + split`。拆成clip的真实集按完整比赛聚合判断split；同场片段不能跨train/dev/test。训练时由适配器读取原始数据并转成统一训练输入，不改源文件。
 
-### `annotations.jsonl`
+## 强制校验和发布
 
-每行严格为一个frame对象，固定字段至少含：`dataset_id`, `dataset_version`, `unit_id`, `camera_id`, `frame_index`, `source_step`, `time_seconds`, `objects[]`。object至少含稳定entity/track ID、类别、team、role、goalkeeper、可见bbox、bbox_source、visible_pixel_count、truncated、visibility、instance_mask_id、jersey_number、号码可见/可读/朝向/number_bbox、固定Pose schema下的keypoint数组和每点visibility。单位、bbox边界约定、visibility取值和unknown语义由`frame_annotation.schema.json`枚举固定。
+Validator从`dataset_manifest`计算唯一允许的文件树：按seed、冻结camera IDs、frame count及mask/image开关预期生成路径集合，检查磁盘树必须完全相等。不得从现有文件反推并接纳新的camera/字段。还需核验：每seed十个ID映射唯一且号码不重复、各camera帧完整且同步、annotation每帧十人、frame/source_step/time映射正确、bbox等于mask像素tight box、Pose点数与顺序正确、号码/track映射跨帧稳定、所有文件SHA与清单相符。
 
-关键点数量与顺序是版本级常量，由manifest的`pose_schema_id`引用随仓库发布的spec。当前需在生成前决定采用生产级12点契约还是独立验证通过的其他schema；不得把历史文件名COCO17当作17点证据。unknown visibility必须明确写unknown/null，不能推测为visible。
-
-### 图像与mask
-
-- RGB统一为无损PNG、RGB三通道、8-bit；尺寸在manifest逐camera固定。禁止混入JPEG、RGBA、不同色彩空间或不同维度。
-- instance `mask/*.png`统一为单通道8-bit PNG，0背景，1..10对应固定球员ID；像素与同帧RGB严格对齐。
-- `number_mask/*.png`统一为单通道8-bit PNG，0背景，32..41对应固定球员号码ID；像素与同帧RGB严格对齐。不可读/被遮挡时该人像素为0，但annotation仍保留号码值与可见状态。
-- `gt/gt.txt`遵循MOTChallenge九列、一基帧号，完全由可见bbox规则从canonical annotations派生。`seqinfo.ini`的frameRate、seqLength、imWidth/imHeight与真实目录完全相同。
-- YOLO labels只允许固定converter重建，使用统一norm坐标、类别字典和pose point schema。它们是派生输出，不是权威数据源。
-
-## 下载的真实数据如何接入
-
-真实数据source目录只读，不放进上述synthetic root。每个比赛建立一个manifest-only适配记录：`source_id`, upstream match/video ID, 原始root绝对路径/locator, upstream文件hash或发行版fingerprint, license/access note, original split, camera/sequence IDs, native schema和转换规则。研究split清单仅存本项目；真实train/dev/test逐比赛列UID。只在许可允许的工作目录生成规范派生labels，不改上游格式/名字。
-
-`SoccerNet-Tracking`等数据源自己的一个match可能由多个clip构成；adapter按match UID把所有片段归到同一逻辑比赛单元，保留原clip ID与时间范围。不得将clips/摄像头拆开后交叉分split，也不得把同比赛重复剪辑计成不同比赛。
-
-## 结构清点算法
-
-正式validator必须从`dataset_manifest`的unit/camera/frame数和artifact开关计算唯一允许的相对路径集合；不能用实际文件列表反向“发现”新字段/新目录。对比磁盘树时既缺一不可也不许多一项。逐个JSONL记录以对应schema验证，并做跨文件语义校验：十个entity/track/mask/号码ID一一映射、号码跨帧稳定、camera帧集合相同、frame_index/source_step/time单调对应、bbox与mask像素包围框一致、关键点顺序与schema相同、所有引用路径位于本unit根内、哈希和计数与root manifest一致。
-
-## 生成Agent强制行为
-
-1. 生成前只读取冻结的schema、unit manifest模板和精确attempt文件；拒绝自行造路径或字段。
-2. 写入attempt专属新目录；目标路径存在即fail，不覆盖、不“整理”已发布目录。
-3. 不确定字段、schema不兼容、额外/缺失文件、frame-count/hash不符时立即停止；不得按自然语言猜测结构并继续训练。
-4. 只有validator全部通过且manifest fingerprint生成后，才可由单一publish步骤把整个unit原子发布；发布清单之外的文件不得迁入。
-5. 版本更新必须改schema version或dataset version、更新迁移/兼容声明；旧dataset只读。
-
-## 首次运行前必须补齐
-
-`pose_schema_id`及spec；camera_id/每camera输出尺寸与FPS；精确seed和帧数；train/dev unit清单；instance/number mask dtype和ID映射；required artifacts开关；bbox/visibility规则；磁盘上限；QC阈值；schema文件和SHA。任意一项未冻结，则Gate 1不通过。
+生成器只写新attempt路径，目标存在即拒绝；validator全通过后才发布整个seed。根manifest只允许冻结清单中的seed。任一错误最多进行一次定位修订；仍失败就停止并记录，不猜测格式、不追加样本、不覆盖已发布版本。
 
 

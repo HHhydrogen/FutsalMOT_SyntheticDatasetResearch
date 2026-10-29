@@ -24,19 +24,19 @@
 
 ### 执行与发布
 
-- 一个完整模拟比赛seed为一个不可拆分发布单元；同seed派生的所有camera、appearance和帧只能属于同一synthetic split。
+- 一个完整模拟比赛seed为一个不可拆分发布单元；同该seed的所有camera、appearance和帧只能属于同一synthetic split。
 - 每次发布到新版本目录。先写 `_work/<attempt>/raw`，校验后写 `_staging/<attempt>`，验收后同卷原子发布；严禁覆盖既有版本。
 - 短样最多两轮：初样一轮；仅当发现可定位问题时允许一次、只修该问题的复验。第二轮仍不通过则`FAIL_STOP`，不扩成无限材质/机位探索。
 - 全量只生成冻结清单中的seed、帧数和相机。达到准确数量即停止；不得因图片“看起来还可以优化”追加seed/角度/外观。
-- 每个unit按[数据集契约](DATASET_CONTRACT_V1.md)逐项校验。失败产物留在attempt诊断范围，不进入发布版本。发布版本只读。
+- 每个seed按[数据集契约](DATASET_CONTRACT_V1.md)逐项校验。失败产物留在attempt诊断范围，不进入发布版本。发布版本只读。
 
 ### Gate 1：数据集生成终止条件
 
-**PASS**必须全部成立：冻结清单中所有unit正好各发布一次；根/逐unit清单、schema和代码版本绑定完整；每camera预期帧数一致；RGB、instance mask、number mask、标注和相机状态帧号一致；轨迹/ID稳定性、Pose字段、号码字段、bbox-mask对应关系和目录白名单检查全部通过；SHA256 manifest完整；实际容量未超过冻结上限；没有额外文件或缺失文件；最终版本路径与指纹已记录。
+**PASS**必须全部成立：冻结清单中的每个seed正好发布一次；根manifest和seed manifest、schema和代码版本绑定完整；每camera预期帧数一致；RGB、instance mask、number mask、标注和相机状态帧号一致；轨迹/ID稳定性、Pose字段、号码字段、bbox-mask对应关系和目录白名单检查全部通过；SHA256 manifest完整；实际容量未超过冻结上限；没有额外文件或缺失文件；最终版本路径与指纹已记录。
 
 **FAIL_STOP**：最多一次针对性短样修订后仍失败；出现无法按原协议解释的数据/标注；预计容量超上限；需要修改schema/相机生成代码/seed规则/样本数。此时保存证据、列出唯一的下一决策点并结束本轮，不继续试错。修订需求必须新建协议和版本。
 
-**流程一交付**：唯一发布根路径、dataset fingerprint、unit计数、完整性/QC汇总、所有失败或缺失、schema/配置/代码版本、相对冻结计划的差异（应为零）、Gate结果。交付后停止。
+**流程一交付**：唯一发布根路径、dataset fingerprint、seed计数、完整性/QC汇总、所有失败或缺失、schema/配置/代码版本、相对冻结计划的差异（应为零）、Gate结果。交付后停止。
 
 ## 流程二：真实数据选取、模型训练与评价
 
@@ -85,4 +85,6 @@
 ## 全局停止规则
 
 Gate有三种状态：`PASS`（交付并停止）、`FAIL_STOP`（有限修复后仍不通过，交付诊断并停止）、`BLOCKED`（缺来源/许可/权限/用户决策，列出最小待决项并停止）。每轮agent只能推进一个flow，不以“顺手完善”为理由跨Gate；通过或失败后都等待用户显式启动后续阶段。任何新研究问题、样本扩量、schema变化、seed搜索、test替换都产生新版本协议，不在当前任务无限延伸。
+
+
 

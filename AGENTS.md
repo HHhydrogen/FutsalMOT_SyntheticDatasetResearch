@@ -17,10 +17,11 @@
 - 面向研究团队的说明、注释和提交说明使用简体中文。
 - 只精确暂存本项目文件；不使用 `git add -A`，不提交媒体、Saved运行文件、环境、权重或无关WIP。
 
-## Stop gates and agent scope
-- The project has three flows: synthetic dataset generation, real match selection/model training, and paper writing. One agent invocation owns only one flow and stops after its gate report; it must never auto-start the next flow.
-- Follow `Docs/INTEGRATED_WORKFLOW_V1.md` and `Docs/DATASET_CONTRACT_V1.md`. Missing numeric budgets/schema/UIDs block execution; do not infer them.
-- Short-sample acceptance has at most one targeted repair after the initial attempt. A still-failing second sample is `FAIL_STOP`.
-- Training/evaluation run only frozen jobs. One retry is allowed only for a documented infrastructure interruption with byte-identical protocol; low scores never justify another run. Test evaluation is once after freeze, with at most one identical infra retry.
-- Paper delivery is one complete draft plus at most two full revision passes. Then hand off unresolved author choices and stop.
-- Every flow ends with `PASS`, `FAIL_STOP`, or `BLOCKED` and an evidence-based handoff. No open-ended searching, rendering, training, threshold tuning, or polishing.
+## 阶段Gate与Agent范围
+- 项目分为合成数据生成、真实数据选择与模型训练、论文撰写三流程。一个执行对话只负责一个流程，通过或停止后交付Gate报告，不能自动启动下一流程。
+- 遵循`Docs/INTEGRATED_WORKFLOW_V1.md`和`Docs/DATASET_CONTRACT_V1.md`。绝对预算、schema或UID缺失时阻止执行，不得猜测。
+- 短样最多初样及一次针对性修订；第二次仍失败则`FAIL_STOP`。
+- 训练/评价仅执行冻结作业。仅对有记录的基础设施中断允许同协议重试一次；低分不得成为重跑理由。封存测试在冻结后运行一次，基础设施问题最多原样重跑一次。
+- 论文交付为一版完整稿及最多两轮整体修订；其后将作者待决项交付并停止。
+- 每个流程以`PASS`、`FAIL_STOP`或`BLOCKED`及证据交接结束。不做无边界检索、渲染、训练、阈值调参或润色。
+

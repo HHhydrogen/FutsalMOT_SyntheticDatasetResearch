@@ -2,85 +2,34 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://futsalmot.local/schemas/v1/dataset_manifest.schema.json",
   "title": "FutsalMOT synthetic dataset manifest v1",
-  "type": "object",
-  "additionalProperties": false,
-  "required": ["schema", "schema_version", "dataset_id", "dataset_version", "status", "pose_schema_id", "generation_protocol", "camera_specs", "artifacts", "split_policy", "expected_counts", "units", "root_fingerprint"],
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "schema_version", "dataset_id", "dataset_version", "status", "pose_schema_id", "schema_hashes", "generation_protocol", "camera_specs", "artifacts", "splits", "expected_counts", "seeds", "root_fingerprint"],
   "properties": {
-    "schema": {"const": "futsalmot_synthetic_dataset"},
-    "schema_version": {"const": "1.0.0"},
-    "dataset_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"},
-    "dataset_version": {"type": "string", "pattern": "^v[0-9]+_[a-z0-9_]+$"},
-    "status": {"enum": ["staging", "released"]},
-    "created_at_utc": {"type": "string", "format": "date-time"},
+    "schema": {"const": "futsalmot_synthetic_dataset"}, "schema_version": {"const": "1.0.0"},
+    "dataset_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"}, "dataset_version": {"type": "string", "pattern": "^v[0-9]+_[a-z0-9_]+$"},
+    "status": {"enum": ["staging", "released"]}, "created_at_utc": {"type": "string", "format": "date-time"},
     "pose_schema_id": {"const": "futsal_body12_v1"},
+    "schema_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dataset_manifest", "seed_manifest", "frame_annotation", "trajectory_record", "camera_state", "camera_metadata", "pose_schema"],
+      "properties": {"dataset_manifest": {"$ref": "#/$defs/sha256"}, "seed_manifest": {"$ref": "#/$defs/sha256"}, "frame_annotation": {"$ref": "#/$defs/sha256"}, "trajectory_record": {"$ref": "#/$defs/sha256"}, "camera_state": {"$ref": "#/$defs/sha256"}, "camera_metadata": {"$ref": "#/$defs/sha256"}, "pose_schema": {"$ref": "#/$defs/sha256"}}
+    },
     "generation_protocol": {
       "type": "object", "additionalProperties": false,
       "required": ["protocol_id", "protocol_sha256", "code_bundle_sha256", "ue_version", "seed_policy", "trajectory_source_version", "fps"],
-      "properties": {
-        "protocol_id": {"type": "string", "minLength": 1},
-        "protocol_sha256": {"$ref": "#/$defs/sha256"},
-        "code_bundle_sha256": {"$ref": "#/$defs/sha256"},
-        "ue_version": {"type": "string", "minLength": 1},
-        "seed_policy": {"type": "string", "minLength": 1},
-        "trajectory_source_version": {"type": "string", "minLength": 1},
-        "fps": {"type": "number", "exclusiveMinimum": 0}
-      }
+      "properties": {"protocol_id": {"type": "string", "minLength": 1}, "protocol_sha256": {"$ref": "#/$defs/sha256"}, "code_bundle_sha256": {"$ref": "#/$defs/sha256"}, "ue_version": {"type": "string", "minLength": 1}, "seed_policy": {"type": "string", "minLength": 1}, "trajectory_source_version": {"type": "string", "minLength": 1}, "fps": {"type": "number", "exclusiveMinimum": 0}}
     },
-    "camera_specs": {
-      "type": "array", "minItems": 1, "uniqueItems": true,
-      "items": {
-        "type": "object", "additionalProperties": false,
-        "required": ["camera_id", "width", "height", "profile_sha256"],
-        "properties": {
-          "camera_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,31}$"},
-          "width": {"type": "integer", "minimum": 1},
-          "height": {"type": "integer", "minimum": 1},
-          "profile_sha256": {"$ref": "#/$defs/sha256"}
-        }
-      }
-    },
-    "artifacts": {
-      "type": "object", "additionalProperties": false,
-      "required": ["rgb", "instance_mask", "number_mask", "pose", "mot_gt", "yolo_det", "yolo_pose"],
-      "properties": {
-        "rgb": {"const": true}, "instance_mask": {"const": true}, "number_mask": {"const": true}, "pose": {"const": true},
-        "mot_gt": {"type": "boolean"}, "yolo_det": {"type": "boolean"}, "yolo_pose": {"type": "boolean"}
-      }
-    },
-    "split_policy": {
-      "type": "object", "additionalProperties": false,
-      "required": ["unit_level", "train_unit_ids", "dev_unit_ids"],
-      "properties": {
-        "unit_level": {"const": "whole_match_seed"},
-        "train_unit_ids": {"type": "array", "items": {"type": "string", "pattern": "^match_seed_[0-9a-f]{8}$"}, "uniqueItems": true, "minItems": 1},
-        "dev_unit_ids": {"type": "array", "items": {"type": "string", "pattern": "^match_seed_[0-9a-f]{8}$"}, "uniqueItems": true, "minItems": 1}
-      }
-    },
-    "expected_counts": {
-      "type": "object", "additionalProperties": false,
-      "required": ["unit_count", "train_unit_count", "dev_unit_count", "total_frames_per_camera"],
-      "properties": {
-        "unit_count": {"type": "integer", "minimum": 2}, "train_unit_count": {"type": "integer", "minimum": 1},
-        "dev_unit_count": {"type": "integer", "minimum": 1}, "total_frames_per_camera": {"type": "integer", "minimum": 1}
-      }
-    },
-    "units": {
-      "type": "array", "minItems": 2,
-      "items": {
-        "type": "object", "additionalProperties": false,
-        "required": ["unit_id", "split", "seed", "frame_count", "camera_ids", "unit_manifest_path", "unit_manifest_sha256"],
-        "properties": {
-          "unit_id": {"type": "string", "pattern": "^match_seed_[0-9a-f]{8}$"},
-          "split": {"enum": ["train", "dev"]},
-          "seed": {"type": "string", "pattern": "^[0-9a-f]{8}$"},
-          "frame_count": {"type": "integer", "minimum": 1},
-          "camera_ids": {"type": "array", "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,31}$"}, "uniqueItems": true, "minItems": 1},
-          "unit_manifest_path": {"type": "string", "pattern": "^synthetic/(train|dev)/match_seed_[0-9a-f]{8}/unit_manifest.json$"},
-          "unit_manifest_sha256": {"$ref": "#/$defs/sha256"}
-        }
-      }
-    },
+    "camera_specs": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/camera_spec"}},
+    "artifacts": {"type": "object", "additionalProperties": false, "required": ["rgb", "instance_mask", "number_mask", "pose"], "properties": {"rgb": {"const": true}, "instance_mask": {"const": true}, "number_mask": {"const": true}, "pose": {"const": true}}},
+    "splits": {"type": "object", "additionalProperties": false, "required": ["split_unit"], "properties": {"split_unit": {"const": "whole_match_seed"}}},
+    "expected_counts": {"type": "object", "additionalProperties": false, "required": ["seed_count", "train_seed_count", "dev_seed_count", "frames_per_seed", "total_rgb_frames"], "properties": {"seed_count": {"type": "integer", "minimum": 2}, "train_seed_count": {"type": "integer", "minimum": 1}, "dev_seed_count": {"type": "integer", "minimum": 1}, "frames_per_seed": {"type": "integer", "minimum": 1}, "total_rgb_frames": {"type": "integer", "minimum": 1}}},
+    "seeds": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/seed_entry"}},
     "root_fingerprint": {"$ref": "#/$defs/sha256"}
   },
-  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "seed_id": {"type": "string", "pattern": "^seed_[0-9a-f]{8}$"},
+    "camera_spec": {"type": "object", "additionalProperties": false, "required": ["camera_id", "width", "height", "profile_sha256"], "properties": {"camera_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,31}$"}, "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}, "profile_sha256": {"$ref": "#/$defs/sha256"}}},
+    "seed_entry": {"type": "object", "additionalProperties": false, "required": ["seed_id", "split", "root_seed", "frame_count", "camera_ids", "manifest_sha256", "manifest_path"], "properties": {"seed_id": {"$ref": "#/$defs/seed_id"}, "split": {"enum": ["train", "dev"]}, "root_seed": {"type": "string", "pattern": "^[0-9a-f]{8}$"}, "frame_count": {"type": "integer", "minimum": 1}, "camera_ids": {"type": "array", "uniqueItems": true, "minItems": 1, "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,31}$"}}, "manifest_sha256": {"$ref": "#/$defs/sha256"}, "manifest_path": {"type": "string", "pattern": "^(train|dev)/seed_[0-9a-f]{8}/seed_manifest.json$"}}}
+  }
 }
+

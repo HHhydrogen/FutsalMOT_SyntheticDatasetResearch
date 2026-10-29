@@ -1,24 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://futsalmot.local/schemas/v1/unit_manifest.schema.json",
-  "title": "FutsalMOT synthetic match-seed unit v1",
+  "$id": "https://futsalmot.local/schemas/v1/seed_manifest.schema.json",
+  "title": "FutsalMOT complete synthetic match seed v1",
   "type": "object", "additionalProperties": false,
-  "required": ["schema", "schema_version", "dataset_id", "dataset_version", "unit_id", "split", "seed", "trajectory_uid", "frame_count", "fps", "camera_ids", "entities", "generation", "expected_files"],
+  "required": ["schema", "schema_version", "dataset_id", "dataset_version", "seed_id", "split", "root_seed", "trajectory_uid", "frame_count", "fps", "camera_ids", "entities", "generation"],
   "properties": {
-    "schema": {"const": "futsalmot_synthetic_unit"}, "schema_version": {"const": "1.0.0"},
+    "schema": {"const": "futsalmot_seed_manifest"}, "schema_version": {"const": "1.0.0"},
     "dataset_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"}, "dataset_version": {"type": "string", "pattern": "^v[0-9]+_[a-z0-9_]+$"},
-    "unit_id": {"type": "string", "pattern": "^match_seed_[0-9a-f]{8}$"}, "split": {"enum": ["train", "dev"]},
-    "seed": {"type": "string", "pattern": "^[0-9a-f]{8}$"}, "trajectory_uid": {"type": "string", "minLength": 1},
+    "seed_id": {"type": "string", "pattern": "^seed_[0-9a-f]{8}$"}, "split": {"enum": ["train", "dev"]},
+    "root_seed": {"type": "string", "pattern": "^[0-9a-f]{8}$"}, "trajectory_uid": {"type": "string", "minLength": 1},
     "frame_count": {"type": "integer", "minimum": 1}, "fps": {"type": "number", "exclusiveMinimum": 0},
-    "time_start_seconds": {"type": "number", "minimum": 0}, "time_end_seconds": {"type": "number", "exclusiveMinimum": 0},
     "camera_ids": {"type": "array", "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,31}$"}, "uniqueItems": true, "minItems": 1},
     "entities": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/entity"}},
     "generation": {
       "type": "object", "additionalProperties": false,
-      "required": ["protocol_sha256", "code_bundle_sha256", "attempt_id"],
-      "properties": {"protocol_sha256": {"$ref": "#/$defs/sha256"}, "code_bundle_sha256": {"$ref": "#/$defs/sha256"}, "attempt_id": {"type": "string", "minLength": 1}}
-    },
-    "expected_files": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true, "minItems": 1}
+      "required": ["protocol_sha256", "code_bundle_sha256", "attempt_id", "receipt_sha256"],
+      "properties": {"protocol_sha256": {"$ref": "#/$defs/sha256"}, "code_bundle_sha256": {"$ref": "#/$defs/sha256"}, "attempt_id": {"type": "string", "minLength": 1}, "receipt_sha256": {"$ref": "#/$defs/sha256"}}
+    }
   },
   "$defs": {
     "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},

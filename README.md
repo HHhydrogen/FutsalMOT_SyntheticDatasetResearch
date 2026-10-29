@@ -14,7 +14,7 @@
 - `Docs/REAL_DATA_SPLITS_V1.md`：真实数据来源、难度分层和比赛级切分原则。
 - `Docs/EXPERIMENT_MATRIX_V1.md`：检测、姿态、跟踪、训练方式及模型尺寸对照。
 - `Docs/INTEGRATED_WORKFLOW_V1.md`：三流程、每阶段进入/终止Gate和失败停止规则。
-- `Docs/DATASET_CONTRACT_V1.md`：按比赛/seed原子组织、闭合schema和发布目录白名单。
+- `Docs/DATASET_CONTRACT_V1.md`：按seed原子组织、闭合schema和发布目录白名单。
 - `schemas/v1/`：结构冻结提案的JSON Schema及Pose顺序定义；生产接入前需验证并绑定SHA。
 - `protocols/`：未来冻结协议；运行前需写入全部绝对参数。
 - `results/`：新研究结果与失败记录，不回填旧版本。
@@ -34,6 +34,7 @@
 5. 号码渲染、长边相机和绿色地面均须先经过UE真实短样与读回验收；方案文件不代表功能已经实现。
 
 详见 [研究方案](Docs/RESEARCH_PLAN_V1.md) 和 [文献索引](literature/README.md)。
+
 
 
 
