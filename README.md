@@ -1,44 +1,36 @@
-# FutsalMOT 合成数据与跨域训练研究
+# FutsalMOT 合成数据研究
 
-这是一个独立的新实验项目，研究合成足球/五人制数据能否改善真实比赛中的球员检测、姿态估计和身份追踪。原工程与旧实验保持原样。本仓库目前处于**方案与文献梳理阶段**：尚未启动新UE渲染、模型训练或正式评测。
+BBox阶段已于2026-11-05完成并暂时结束：24个主表模型、48项两场比赛外确认均已终验；原始模型/预测/失败证据保留，有限自动跟进已删除。不自动开启新训练、推理或调参。
 
-## 研究问题
+- [BBox正式实验、完整结果和纳入标准](docs/exp/BBOX_RESULTS.md)
+- [正式机器清单](docs/exp/bbox_formal_registry.json)
+- [唯一实验日志](docs/exp/EXPERIMENT_LOG.md)
+- [当前待办与职责](docs/plan/TODO.md)
 
-在真实训练样本和计算预算可比、按比赛隔离训练/验证/测试的条件下，UE合成数据能否提升未见真实比赛中的MOT身份连续性？收益出现在哪些训练策略、比赛难度与模型容量下？BBox和Pose作为上游诊断及次要结果。视角、地面和号码作为数据域匹配/标签质量要求。
+## 现行方案
+
+[PAPER](docs/plan/PAPER.md)、[DATASET](docs/plan/DATASET.md)、[EXPERIMENTS](docs/plan/EXPERIMENTS.md)保留原冻结SHA及原科学边界。本次清理没有重写已执行协议；旧文中的“原始诊断保留”已被2026-11-05用户明确清理指令在对应弃用范围覆盖，详见唯一日志和清理清单。
 
 ## 目录
 
-- `literature/`：核心论文阅读卡、BibTeX及检索范围说明。
-- `Docs/LITERATURE_REVIEW_AND_POSITIONING.md`：论文比较、创新边界与候选定位。`Docs/RESEARCH_PLAN_V1.md`：研究假设、阶段路线和冻结门槛。
-- `Docs/DATASET_REDISTILLATION_V1.md`：新数据集规格、相机/地面/号码需求和质量门禁。`Docs/SOURCE_ENGINE_AUDIT_V1.md`：源工程实际入口与实现限制。
-- `Docs/REAL_DATA_SPLITS_V1.md`：真实数据来源、难度分层和比赛级切分原则。
-- `Docs/EXPERIMENT_MATRIX_V1.md`：检测、姿态、跟踪、训练方式及模型尺寸对照。
-- `Docs/INTEGRATED_WORKFLOW_V1.md`：三流程、每阶段进入/终止Gate和失败停止规则。
-- `Docs/DATASET_CONTRACT_V1.md`：按seed原子组织、闭合schema和发布目录白名单。
-- `schemas/v1/`：结构冻结提案的JSON Schema及Pose顺序定义；生产接入前需验证并绑定SHA。
-- `protocols/`：未来冻结协议；运行前需写入全部绝对参数。
-- `results/`：新研究结果与失败记录，不回填旧版本。
+- `src/futsalmot`：BBox正式数据/训练/记录/评价代码及共享基础设施。
+- `configs`：固定子集manifest和共享预览配置；`experiment.yaml`仅供通用只读CLI预览，正式参数以注册表绑定的实际job table为准；`pyproject.toml`、`requirements.lock`：包定义与依赖锁。
+- `tests`：对应的CPU契约、状态、几何和生命周期回归源码。
+- `tools`：正式预检/批量控制/确认接续、汇总与只读观察台；不默认启动实验。
+- `docs/exp`：正式结果索引、可提交的小结果及唯一实验日志。
+- `runs`、`weights`、`cache`、`.venv`：本机产物，Git忽略；大证据引用G盘原位目录。
+- `docs/paper`：已有本地文献库；PDF不混入本次BBox提交。
 
-## 存储
+实际研究Git根为`D:/projects/FutsalMOT_SyntheticDatasetResearch`；UE生产工程在另一个Git根`D:/projects/FutsalMOT_UEDataset`，本次BBox提交不包含其改动。原始数据仍在`G:/FutsalMOT_Dataset`，训练/评价证据在`G:/FutsalMOT_Training/runs`；不通过junction绕过路径边界。
 
-- 新研究媒体根目录：`G:/FutsalMOT_Dataset/synthetic_research_v1`。
-- 本仓库保存代码、配置、数据清单、协议和小型结果表；大型图像、mask和逐帧Pose只写入G盘数据根目录。
-- 原始工程：`D:/projects/FutsalMOT_UEDataset`；既有研究/权重：`D:/projects/FutsalMOT_Research`。均为参考源，不在本项目里改写或复制。
+## 当前职责
 
-## 当前边界
+本聊天仅负责BBox。Seg交接聊天`01a1a627-79a8-7af1-b59e-abb69fd9fa2b`，Pose交接聊天`01a1a627-8a05-7c63-a9ba-c90ae819a89e`；其源码、资料和未完成工作保留，由用户在各聊天安排，不并入本次BBox提交。
 
-1. 旧测试集SNMOT-116/187及封存包不读取、不用于选参；之前已看过的12场比赛全部只可视为开发数据。
-2. 训练、验证、测试按完整比赛身份分割；相邻片段、不同相机或同场新时间窗不能算独立比赛。
-3. 主结论按预先指定的总体与难度分层报告，不筛容易比赛，不挑最好seed或checkpoint。
-4. 数据版本与协议冻结前，不开始正式渲染/训练。所有新参数必须写绝对值，所有结果同时给各比赛绝对成绩、配对差值与区间。
-5. 号码渲染、长边相机和绿色地面均须先经过UE真实短样与读回验收；方案文件不代表功能已经实现。
+## 只读观察台
 
-详见 [研究方案](Docs/RESEARCH_PLAN_V1.md) 和 [文献索引](literature/README.md)。
+[本地观察台](http://127.0.0.1:8765)显示训练与48项确认记录，页面关闭不影响任何作业。现有服务原固定截止为北京时间2026-11-07 08:00:41，不自动续期；它不是新训练入口。
 
+## 提交边界
 
-
-
-
-
-
-
+只提交明确的BBox/共享依赖文件和小结果；不使用`git add -A`，不提交模型、环境、GT、raw预测、服务PID登记或无关Seg/Pose/UE工作。当前研究仓库没有配置远端；本次为本地Git提交。

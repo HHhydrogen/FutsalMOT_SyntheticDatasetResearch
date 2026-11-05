@@ -1,0 +1,1958 @@
+{
+  "schema": "bbox_formal_registry_v1",
+  "state": "CLOSED_NO_AUTOMATIC_EXPERIMENTS",
+  "at_utc": "2026-11-05T12:27:25.303757+00:00",
+  "primary_training_count": 24,
+  "secondary_training_count": 6,
+  "budget_calibration_count": 2,
+  "confirmation_model_match_count": 48,
+  "confirmation_image_inferences": 36000,
+  "primary_models": [
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed17_N100_R",
+      "seed": 17,
+      "real_fraction": 1.0,
+      "N_R": 2100,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5516342616501645,
+        "AP50": 0.958764562216891,
+        "AP75": 0.5687237972749589,
+        "AP_small": 0.3508693325303684,
+        "AP_medium": 0.5414928260561843,
+        "AP_large": 0.6149733688430563,
+        "AR_max1": 0.05544046661303299,
+        "AR_max10": 0.46280168946098155,
+        "AR_max100": 0.6451327433628318,
+        "AR_small": 0.42047244094488195,
+        "AR_medium": 0.6485135135135136,
+        "AR_large": 0.6645161290322581
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261103_a01\\budget1500_R_seed17\\status.json",
+        "sha256": "6c3e2649e8265f3964fcc2ed78cdeeb40ce2a62de9236b51709998ef75cb337f"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a01/job_table.json",
+        "bytes": 30934,
+        "sha256": "85c55bc087f4fb5493128433a2f67509b2e64a614e9854d54b1603eb30164aee"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a01/code_bindings.json",
+        "bytes": 3398,
+        "sha256": "c5d2ad1b919334bcb8789ac981e7627ebaafef705c7d27538e4fdaf68a039d65"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a01/completion_verification.json",
+        "bytes": 2041,
+        "sha256": "ffb8325d5b0a90a5f1f554f9732ff0402e396a9096451b5c610495fc683129c2"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261103_a01\\control\\CONTROL_MANIFEST.json",
+        "sha256": "d29b825bdbd0b8036cffe585143de0ed2e1518bb134f47aacfa592dfc454c5d2"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a01/budget1500_R_seed17/evaluation/step001500_final_final/summary.json",
+        "bytes": 584,
+        "sha256": "d07a18f4a4c156d6cfa8eabffa41b180f12141cc48a426981de9eb52c4ef70b0"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a01/budget1500_R_seed17/checkpoints.jsonl",
+        "bytes": 1695,
+        "sha256": "f9f64b048616b9c3771744e41360109ec6de5d2d5c4e18b7b1fdfe68b4654a41"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261103_a01\\budget1500_R_seed17\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "e8534bc11c50018febb8860c417fe6e25c30009d356f4498f3bb9db8ca979d5e",
+        "bytes": 114293807,
+        "source_bindings_sha256": "38d39c37eb9df6f6a396a0aaf0eb2a32d9360a474364cb9aaf2a47b6d937fb4b",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed17_N100_RS",
+      "seed": 17,
+      "real_fraction": 1.0,
+      "N_R": 2100,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5404465730435029,
+        "AP50": 0.9585818177620226,
+        "AP75": 0.5413643962243975,
+        "AP_small": 0.3597382159195037,
+        "AP_medium": 0.5302998201044834,
+        "AP_large": 0.6096003676731887,
+        "AR_max1": 0.054635961383749,
+        "AR_max10": 0.4571500402252614,
+        "AR_max100": 0.635528962188254,
+        "AR_small": 0.415748031496063,
+        "AR_medium": 0.6381326781326782,
+        "AR_large": 0.6585806451612902
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261103_a02\\budget1500_R_plus_S_seed17\\status.json",
+        "sha256": "02a91225d7f4830c1aa4515dc6d7b7af6ecd41e11b3ec974b8bf244b8673d701"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a02/job_table.json",
+        "bytes": 30947,
+        "sha256": "a7c61afe078d881d2bf919e7b7339bb797b3dbb6ebb43bb8102ecf0507e5fe3c"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a02/code_bindings.json",
+        "bytes": 3398,
+        "sha256": "c5d2ad1b919334bcb8789ac981e7627ebaafef705c7d27538e4fdaf68a039d65"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a02/completion_verification.json",
+        "bytes": 2047,
+        "sha256": "db747f2eef0945b94c4ac38d4690ce6078c0a9079fd0c2c5747ae4661ad241e4"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261103_a02\\control\\CONTROL_MANIFEST.json",
+        "sha256": "5a552a21262131842e37582ba082196a608b20b12bff1f7494768748cf7c7cec"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a02/budget1500_R_plus_S_seed17/evaluation/step001500_final_final/summary.json",
+        "bytes": 579,
+        "sha256": "aea8a36ecb7d5b6bd42b73ffcc02a9fc8fd7a0258664e4713bffa4bfccb24a5b"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a02/budget1500_R_plus_S_seed17/checkpoints.jsonl",
+        "bytes": 1719,
+        "sha256": "03d54a3680a5abecafbf823b291e46f0dc5fd09f53dd9689e213b4047772482e"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261103_a02\\budget1500_R_plus_S_seed17\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "e8823882267c31d2e28c2e63170802708e39356593917d83252ddf30ad9c9935",
+        "bytes": 114293871,
+        "source_bindings_sha256": "398d47d4ec45dcdd34959936e7b64d9bdbc834e08b81f7c874f27770c035f8fc",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed17_N50_R",
+      "seed": 17,
+      "real_fraction": 0.5,
+      "N_R": 1050,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5391124870461028,
+        "AP50": 0.9529373905354191,
+        "AP75": 0.543726776977106,
+        "AP_small": 0.3691995026487901,
+        "AP_medium": 0.5282757909233087,
+        "AP_large": 0.6030736712308223,
+        "AR_max1": 0.05482703137570394,
+        "AR_max10": 0.4582059533386967,
+        "AR_max100": 0.633296460176991,
+        "AR_small": 0.43543307086614175,
+        "AR_medium": 0.6357739557739558,
+        "AR_large": 0.6535483870967742
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261104_a02\\label50_R_seed17\\status.json",
+        "sha256": "3729cff198d8177c516c52764bcac62619a99c5280e1f3ef212c1b324d78db69"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a02/job_table.json",
+        "bytes": 31677,
+        "sha256": "a389065811f477bd3d96c0832d0d81419332eec20a17e44e1ddcb237f14a01d4"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a02/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a02/completion_verification.json",
+        "bytes": 5341,
+        "sha256": "bd44b90969c86ebb440d5250618e6a9066ed2bf52d0d93c44aa1e8d2b9fb297c"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261104_a02\\control\\CONTROL_MANIFEST.json",
+        "sha256": "863af7fdf999d663814f45c413c94395b1eae48f260ef982b70fca21643ef905"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a02/label50_R_seed17/evaluation/step001500_final_final/summary.json",
+        "bytes": 571,
+        "sha256": "eedcaebd3e14596cd53d1a99d7e0630302dba6afc6b565905f9048f2a9f3c6c5"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a02/label50_R_seed17/checkpoints.jsonl",
+        "bytes": 1686,
+        "sha256": "e49b471772d357301b2ca0594f08365e3eed85bfb8d9bb9dcd0736fb9791abbb"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261104_a02\\label50_R_seed17\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "ced1e134a489e37308e3e4a0b43c8adfee3b7b3fb644cbfde00561858f57dcb0",
+        "bytes": 114288303,
+        "source_bindings_sha256": "01905917ed840a7cd3d74d97e452eea5c6f946b124538f2ed4168b190a413426",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed17_N50_RS",
+      "seed": 17,
+      "real_fraction": 0.5,
+      "N_R": 1050,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5420737254675314,
+        "AP50": 0.9554526598559951,
+        "AP75": 0.5436078567109385,
+        "AP_small": 0.34660672170712403,
+        "AP_medium": 0.5307576076260638,
+        "AP_large": 0.6149965132572532,
+        "AR_max1": 0.05481697506033789,
+        "AR_max10": 0.4609513274336283,
+        "AR_max100": 0.6394006436041834,
+        "AR_small": 0.402755905511811,
+        "AR_medium": 0.6418673218673219,
+        "AR_large": 0.6660645161290322
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261104_a01\\label50_R_plus_S_seed17\\status.json",
+        "sha256": "df9a0530775c4f4d0409a9a57451480678742a2b93ce3150ccbeb424214bb31e"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a01/job_table.json",
+        "bytes": 31690,
+        "sha256": "ef45f4d34103b936ff21a540427e54b0710fef34b450b07817b384085b1c89b2"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a01/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a01/completion_verification.json",
+        "bytes": 5401,
+        "sha256": "215f3fdc8a23498c6ff3bf100b4f29bfcf023bf3dd1b9b3a2a12b8e676838153"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261104_a01\\control\\CONTROL_MANIFEST.json",
+        "sha256": "7baa61feedb433fe83c7ebe004e7ae0262f096d3c6072afd02daa8544acdc921"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a01/label50_R_plus_S_seed17/evaluation/step001500_final_final/summary.json",
+        "bytes": 582,
+        "sha256": "f1d65abbb79b85203736f0c7c4c2aafae706584567ed8cae5d640b0c8e50791b"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a01/label50_R_plus_S_seed17/checkpoints.jsonl",
+        "bytes": 1710,
+        "sha256": "b12c4bcd1abe844fb1bbbb9798406afd0afb44b1744c2c7af8e2b98c0ef7a08f"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261104_a01\\label50_R_plus_S_seed17\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "0f21d2fd17d115d9fdeaacb6645e708e1f22736c2de820419a2c0e1707182ad8",
+        "bytes": 114288367,
+        "source_bindings_sha256": "5f5d3df3a37f988b90823f6ed784d62f0ba007d5b2ccea12ae1c4816203c7e11",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed17_N25_R",
+      "seed": 17,
+      "real_fraction": 0.25,
+      "N_R": 525,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5178672831102502,
+        "AP50": 0.948368333113909,
+        "AP75": 0.49859485323435504,
+        "AP_small": 0.2975364297228139,
+        "AP_medium": 0.5096618824894804,
+        "AP_large": 0.5806042485410985,
+        "AR_max1": 0.05370072405470636,
+        "AR_max10": 0.44722445695897034,
+        "AR_max100": 0.6098250201126307,
+        "AR_small": 0.35551181102362206,
+        "AR_medium": 0.6137714987714988,
+        "AR_large": 0.6320645161290323
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261103_a02\\lowlabel25_R_seed17\\status.json",
+        "sha256": "e92110314634b1562ee9cc4f9034e212038424ecedc6d1582e3eb45285fd4c55"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a02/job_table.json",
+        "bytes": 31677,
+        "sha256": "d459ddb658da22627d16979e0c9cdae7b01307b9456fbbf45bcaf5416dfb7580"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a02/code_bindings.json",
+        "bytes": 3485,
+        "sha256": "551971ea68ae429864c2975ef1c3bea29353c5dc181f731034b5aacc220840e6"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a02/completion_verification.json",
+        "bytes": 1977,
+        "sha256": "e5b02feecc462050e9cb521ae3000759af93fdff5778dd0aec72b56b1f7b294e"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261103_a02\\control\\CONTROL_MANIFEST.json",
+        "sha256": "aa7a4d6bc59d05745db3481e2a39f1e01653966109b8311d9f12f1bd461ad5bc"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a02/lowlabel25_R_seed17/evaluation/step001500_final_final/summary.json",
+        "bytes": 584,
+        "sha256": "b165469401e44a3bfa83c2dba56fb0a16442515349faf2d9dcab667021e88ce5"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261103_a02/lowlabel25_R_seed17/checkpoints.jsonl",
+        "bytes": 1695,
+        "sha256": "06e76a6aa91d6ada7b67103b0b7b9173abfc0a1d4bc888ea60c3b0dfc86aa548"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261103_a02\\lowlabel25_R_seed17\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "75fabfac48729e7ec1788ffce859e23dfdc2f274f89b9f598dfe7939ca4a30bb",
+        "bytes": 114285231,
+        "source_bindings_sha256": "5d4c6d47312886f52d12227f30b938b82c22821d2e8a6925e3a5c950a96b25ba",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed17_N25_RS",
+      "seed": 17,
+      "real_fraction": 0.25,
+      "N_R": 525,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5241190226766204,
+        "AP50": 0.9501861137220792,
+        "AP75": 0.5044386421679721,
+        "AP_small": 0.33073175167020624,
+        "AP_medium": 0.512115297420896,
+        "AP_large": 0.5977780741084034,
+        "AR_max1": 0.053167739340305706,
+        "AR_max10": 0.4485317779565567,
+        "AR_max100": 0.6228278358809332,
+        "AR_small": 0.37047244094488185,
+        "AR_medium": 0.6271007371007371,
+        "AR_large": 0.6425161290322581
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261103_a03\\lowlabel25_R_plus_S_seed17\\status.json",
+        "sha256": "2fa39a58351da16d9be7556c71d7dd7f24e0419c1ab5bf01a32ec7981e44084e"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a03/job_table.json",
+        "bytes": 31690,
+        "sha256": "eae52def0474490477e562e829771bebc31205ad90ea64bbfc3a33453fb1c7e9"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a03/code_bindings.json",
+        "bytes": 3485,
+        "sha256": "551971ea68ae429864c2975ef1c3bea29353c5dc181f731034b5aacc220840e6"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a03/completion_verification.json",
+        "bytes": 2407,
+        "sha256": "3b5f60f83b1e409bb27c04d5eb2ef1950ec6da25d851fc5b82aeddcdd05f14b6"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261103_a03\\control\\CONTROL_MANIFEST.json",
+        "sha256": "790b874f8fb54877c340863598cff964f72460bfe585009f783ec169412c4df8"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a03/lowlabel25_R_plus_S_seed17/evaluation/step001500_final_final/summary.json",
+        "bytes": 585,
+        "sha256": "ddef57afac5a1a59ea2fe548d93a08eb3ea024164c0268c686e0e67562618a34"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261103_a03/lowlabel25_R_plus_S_seed17/checkpoints.jsonl",
+        "bytes": 1719,
+        "sha256": "3963d1448988210e6b376ef3949c6bd06cfcaca435c857c9a01843c550c26242"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261103_a03\\lowlabel25_R_plus_S_seed17\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "25504659a7f14a94bb0cc0cd76aba6179bc3b326d85c55a93937c83b325bc9e1",
+        "bytes": 114285231,
+        "source_bindings_sha256": "efc043698b520ef2e9193c12a659076694d30ce4c6898958a983fed8af24dae9",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed17_N10_R",
+      "seed": 17,
+      "real_fraction": 0.1,
+      "N_R": 210,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.48613034511755193,
+        "AP50": 0.919438674920068,
+        "AP75": 0.4472762478267003,
+        "AP_small": 0.2863592159193913,
+        "AP_medium": 0.471657786006334,
+        "AP_large": 0.5659777795349183,
+        "AR_max1": 0.05095534995977474,
+        "AR_max10": 0.4350462590506837,
+        "AR_max100": 0.5741351568785197,
+        "AR_small": 0.3291338582677165,
+        "AR_medium": 0.5714987714987714,
+        "AR_large": 0.6290322580645161
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261104_a03\\label10_R_seed17\\status.json",
+        "sha256": "852d881e25a8b9ba18d93c5ac480e7a6b4a98755cc4dd62e411dfea333cbdea2"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a03/job_table.json",
+        "bytes": 31675,
+        "sha256": "da15dc8cb74ac4b99279fae963d56b109f32821c64b5af012bb20a8e54e283dc"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a03/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a03/completion_verification.json",
+        "bytes": 5351,
+        "sha256": "7b4922768c439bcf70dbbcf4be01a280338d559fde57e807a338b23ad91631e1"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261104_a03\\control\\CONTROL_MANIFEST.json",
+        "sha256": "99072f731bdd317b9625777f2dd1c22b27ed7ce8208b4e8d1d56d3f9d7cb3116"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a03/label10_R_seed17/evaluation/step001500_final_final/summary.json",
+        "bytes": 582,
+        "sha256": "592722b653df7588d8d10570b297db3709451b623080dc6265a3ddf60ac79575"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed17_20261104_a03/label10_R_seed17/checkpoints.jsonl",
+        "bytes": 1686,
+        "sha256": "cd13b7ba580fb3b34c7996d3bde5ccfabd2a305e5175a22082ad446740dd5573"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed17_20261104_a03\\label10_R_seed17\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "7a2e1e7d10953fab638f72c89d11cde5cfbdcbf89d7a9a3e50b49eb7a3387098",
+        "bytes": 114283375,
+        "source_bindings_sha256": "2f19fdef16a1cabd0097ea9edc8ef7e22f6ea2842aeab1f8e207a17f26269871",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed17_N10_RS",
+      "seed": 17,
+      "real_fraction": 0.1,
+      "N_R": 210,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5015849435184775,
+        "AP50": 0.9406538760724287,
+        "AP75": 0.4637188646302103,
+        "AP_small": 0.3498675157436837,
+        "AP_medium": 0.49221871127032185,
+        "AP_large": 0.5696252498946437,
+        "AR_max1": 0.051609010458567986,
+        "AR_max10": 0.4391995172968624,
+        "AR_max100": 0.5939159292035399,
+        "AR_small": 0.3901574803149606,
+        "AR_medium": 0.5948894348894349,
+        "AR_large": 0.6229677419354839
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261104_a02\\label10_R_plus_S_seed17\\status.json",
+        "sha256": "dc398a0a0e3e1537c6f7e35397856ba1307179de4be8477926c9e7498dbc463e"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a02/job_table.json",
+        "bytes": 31688,
+        "sha256": "6f103d1ffa1f259a68f86578fd4590c37c600fa2490c6cbbbe7139800c7b15f7"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a02/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a02/completion_verification.json",
+        "bytes": 5414,
+        "sha256": "4cb608c04d04d6501421a82bd2ca905b140c4af40277ef43cde3e3b88a360df5"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261104_a02\\control\\CONTROL_MANIFEST.json",
+        "sha256": "cc88a2190517616fa81e3d2f757e96e7686343d727ffc6277917d3f611ce9f5d"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a02/label10_R_plus_S_seed17/evaluation/step001500_final_final/summary.json",
+        "bytes": 584,
+        "sha256": "01142309eca5241d8b6563de03a6caf5311a8655affdc8069ac8afe8ce51cbd2"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed17_20261104_a02/label10_R_plus_S_seed17/checkpoints.jsonl",
+        "bytes": 1710,
+        "sha256": "721ce957495b76447aaba39068284017ca05132debb01c579ab4d66f1db407b9"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261104_a02\\label10_R_plus_S_seed17\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "d3630332bc7bf6a7a68f35d0b8c995d47bf1427f96d1e5885d94e52668463949",
+        "bytes": 114283375,
+        "source_bindings_sha256": "7bfbc34d7161c2b05e3606db5308f8c4ebaaf6834d2e80da2c2e3f775815be14",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed29_N100_R",
+      "seed": 29,
+      "real_fraction": 1.0,
+      "N_R": 2100,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.548592284796249,
+        "AP50": 0.9567477711954151,
+        "AP75": 0.5582864111392855,
+        "AP_small": 0.34887948495115484,
+        "AP_medium": 0.5380217304573179,
+        "AP_large": 0.6118205394961417,
+        "AR_max1": 0.054816975060337905,
+        "AR_max10": 0.46374698310539014,
+        "AR_max100": 0.643543845534996,
+        "AR_small": 0.4110236220472441,
+        "AR_medium": 0.6475798525798526,
+        "AR_large": 0.6609677419354839
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a02\\label100_R_seed29\\status.json",
+        "sha256": "d0b12ee4570b307aa5cb1ecd1d0da250ef6b7c11043a480049a15d06162412d0"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a02/job_table.json",
+        "bytes": 31680,
+        "sha256": "9ee07c033c164271077fc144431a29388c6490667bd44c60fc6626d4f83e412c"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a02/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a02/completion_verification.json",
+        "bytes": 6671,
+        "sha256": "ba2c5ca34ee102dcfd683e97a0cb155b41ce22bba956de01e15bb4e77671428b"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a02\\control\\CONTROL_MANIFEST.json",
+        "sha256": "a9a858db5f2c63e4b8cc47612a2733ceca8bf4d2dc7dc27d747ee84a6cbd3ce1"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a02/label100_R_seed29/evaluation/step001500_final_final/summary.json",
+        "bytes": 583,
+        "sha256": "e1794924ff6abf2da9184c65f07683d84cccdbe29d8e82c8867489d1a3f574e9"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a02/label100_R_seed29/checkpoints.jsonl",
+        "bytes": 1689,
+        "sha256": "23960dbd20286a92f87b7081bbd290ef98b35614d0d4c85cb6ba1a61151db73d"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a02\\label100_R_seed29\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "923921d5f279701382554a026381bb0fee168beb78311eec442fc3bd5d48dcdf",
+        "bytes": 114294575,
+        "source_bindings_sha256": "2bb4b4fe6664ef02c0dd9ba42cefcdaffb03a4304d33c13afe4be2774b2c11ff",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed29_N100_RS",
+      "seed": 29,
+      "real_fraction": 1.0,
+      "N_R": 2100,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5421217148867459,
+        "AP50": 0.9602809768966277,
+        "AP75": 0.5443835824117951,
+        "AP_small": 0.3631857897172691,
+        "AP_medium": 0.531526646584413,
+        "AP_large": 0.6070751366436327,
+        "AR_max1": 0.0544549477071601,
+        "AR_max10": 0.4578037007240547,
+        "AR_max100": 0.6416130329847144,
+        "AR_small": 0.4224409448818897,
+        "AR_medium": 0.6457985257985259,
+        "AR_large": 0.6559354838709678
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a01\\label100_R_plus_S_seed29\\status.json",
+        "sha256": "21539532ea0ea9a3d96e215241b52387c7aecb1a76757e97a7a1af239d4d0be6"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a01/job_table.json",
+        "bytes": 31693,
+        "sha256": "17f3af2018ae76819e0d19e4fc63aeb4797b36940e311222932c7adbd259e265"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a01/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a01/completion_verification.json",
+        "bytes": 6699,
+        "sha256": "e23cd47637714997233c141606c8f229120470381edbe6e3bbfb5ad3a7fb3f1c"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a01\\control\\CONTROL_MANIFEST.json",
+        "sha256": "4a80a31cf98682652b448a713b507b8a6f2a56dc11cb593fed71ff4f2b37974f"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a01/label100_R_plus_S_seed29/evaluation/step001500_final_final/summary.json",
+        "bytes": 580,
+        "sha256": "abaeb979a7e54c99cc38d988ea2ff5a3a8087e124d515bf6521a6ec7d0849624"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a01/label100_R_plus_S_seed29/checkpoints.jsonl",
+        "bytes": 1713,
+        "sha256": "ab2663a504b940c3b8aac1a6bfbcd02877dbf597b75371dc88cc379c621fdd1f"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a01\\label100_R_plus_S_seed29\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "5115d8d90ee9ec4e80ec52c7aaed8cc1ed6a3bd33f033a6767d9a8504674167f",
+        "bytes": 114294639,
+        "source_bindings_sha256": "ac53274d8f24663abf69b9f0043c29be3ad1ec28acf8bad1b153fc65774007e2",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed29_N50_R",
+      "seed": 29,
+      "real_fraction": 0.5,
+      "N_R": 1050,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5362147753246989,
+        "AP50": 0.9517460562308222,
+        "AP75": 0.5305804553986875,
+        "AP_small": 0.3582310989149963,
+        "AP_medium": 0.52326241275932,
+        "AP_large": 0.6085786535746444,
+        "AR_max1": 0.05499798873692678,
+        "AR_max10": 0.4568584070796461,
+        "AR_max100": 0.6317980691874497,
+        "AR_small": 0.4232283464566929,
+        "AR_medium": 0.6335012285012285,
+        "AR_large": 0.6576774193548387
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a03\\label50_R_seed29\\status.json",
+        "sha256": "5b1a66527ed43ad54bc804b2c74bb0992d61db9d35f8b9c5e66fc40cd11d0b26"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a03/job_table.json",
+        "bytes": 31677,
+        "sha256": "68ed4707d5b7bc81aada634e9e4bdf433a341e48e47b95bc83705a0d9ce55982"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a03/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a03/completion_verification.json",
+        "bytes": 6660,
+        "sha256": "95b63c045dc274234f2419fa1b9f5afd88c429387481c99a3ce8e4ee4517b43f"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a03\\control\\CONTROL_MANIFEST.json",
+        "sha256": "847616b4655db50bf661827044c3bbcb8d678d25e9d8ff57cc78417c8141ba3a"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a03/label50_R_seed29/evaluation/step001500_final_final/summary.json",
+        "bytes": 568,
+        "sha256": "81a93a408de09b1cf8955702d2ff4160f5aa841bfea8718e9a853d2160fb4a63"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a03/label50_R_seed29/checkpoints.jsonl",
+        "bytes": 1686,
+        "sha256": "d16cb14b4412785eebba8620799d74ecc677d9438934a70c4ba2e0c01ba15351"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a03\\label50_R_seed29\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "55b6900ff7fac6e1bccac7638c556fa9eeeb3051ca69e7107860a463631f6d10",
+        "bytes": 114288239,
+        "source_bindings_sha256": "7da9f5d010218e405c904215d4fdb029dae9ff72288098d74d09ac43507b8570",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed29_N50_RS",
+      "seed": 29,
+      "real_fraction": 0.5,
+      "N_R": 1050,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5354680179560748,
+        "AP50": 0.9589961333980098,
+        "AP75": 0.528039535953075,
+        "AP_small": 0.33204264941794454,
+        "AP_medium": 0.5240002686728545,
+        "AP_large": 0.610425809044441,
+        "AR_max1": 0.05339903459372486,
+        "AR_max10": 0.4562751407884151,
+        "AR_max100": 0.6343121480289622,
+        "AR_small": 0.39448818897637794,
+        "AR_medium": 0.6369410319410319,
+        "AR_large": 0.6603870967741935
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a02\\label50_R_plus_S_seed29\\status.json",
+        "sha256": "c3545fefad4ac3bc1cbe1174f2cd4dd439849f4f429a00fffde220efa6ef4741"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a02/job_table.json",
+        "bytes": 31690,
+        "sha256": "42edfd6e9ed8c589eada8aa4d811463a26fc88786c7d2b38f1b296de84231532"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a02/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a02/completion_verification.json",
+        "bytes": 6692,
+        "sha256": "ddec322f39b17178b61339664a3b5c147a09225132360592e116c9bc912bf299"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a02\\control\\CONTROL_MANIFEST.json",
+        "sha256": "9bc2ecce8c4496c9b4d07505753411405030befb9b53e4ba53c02a3a9796e0ca"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a02/label50_R_plus_S_seed29/evaluation/step001500_final_final/summary.json",
+        "bytes": 582,
+        "sha256": "4ce9e5c30abab24a65092d191319dea81c9a53deeda6e255e697ad25a72c34b4"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a02/label50_R_plus_S_seed29/checkpoints.jsonl",
+        "bytes": 1710,
+        "sha256": "3288cac178b93188e41b4bae9b60f4531e463e962833753f0dd741e99ae01037"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a02\\label50_R_plus_S_seed29\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "ba1cf80a2d067ea225ee1d4998761dc4daec9735a333308bf7959318c7aa416f",
+        "bytes": 114288303,
+        "source_bindings_sha256": "1a66a3104c374ae8a005253f3d014d8ecc133b2f2d1ba531e85dad9c6c8d9f37",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed29_N25_R",
+      "seed": 29,
+      "real_fraction": 0.25,
+      "N_R": 525,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.515909088822543,
+        "AP50": 0.9368695287882455,
+        "AP75": 0.5005343658912256,
+        "AP_small": 0.2977955754896677,
+        "AP_medium": 0.5048478906184792,
+        "AP_large": 0.5863068989883495,
+        "AR_max1": 0.053569991954947695,
+        "AR_max10": 0.44663113435237334,
+        "AR_max100": 0.6092819790828641,
+        "AR_small": 0.3476377952755906,
+        "AR_medium": 0.6121744471744471,
+        "AR_large": 0.6382580645161291
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a04\\label25_R_seed29\\status.json",
+        "sha256": "766d96697e97947e5c675d4be046834ab84c9abe4a3c0d5fe6f2e763208aa7d5"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a04/job_table.json",
+        "bytes": 31676,
+        "sha256": "12046b90679db743b2f9c153d01c5d01ff24242261e5634f6cd1b2b107bc36e9"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a04/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a04/completion_verification.json",
+        "bytes": 6667,
+        "sha256": "5c45e5e2f1d1fdda3fe0f50333d763472576da66f8e7ced15b05375f15103847"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a04\\control\\CONTROL_MANIFEST.json",
+        "sha256": "b397b2bbef89b7a2be696ad8aebe95ce2aa38f41a03ea9e7653df4794eaacf83"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a04/label25_R_seed29/evaluation/step001500_final_final/summary.json",
+        "bytes": 583,
+        "sha256": "38a1e59c1e76e120da0526f286302cbee32667bb45e5cd4dcf9e765f99cb996c"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a04/label25_R_seed29/checkpoints.jsonl",
+        "bytes": 1686,
+        "sha256": "bba2894ee2b4b599577961f4b6ac250f63631de6f85499d39c2de80f2abfc687"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a04\\label25_R_seed29\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "2ff0e4a92ad90544288c0661bf0a43406242d9202c2eac6b2a2f246b51ebf196",
+        "bytes": 114285103,
+        "source_bindings_sha256": "377d8b22bbd9b9250ef26811f5986ef97b647173ba2796fe0988e70de8c750de",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed29_N25_RS",
+      "seed": 29,
+      "real_fraction": 0.25,
+      "N_R": 525,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5332803978434328,
+        "AP50": 0.9526158124092253,
+        "AP75": 0.5301506545991193,
+        "AP_small": 0.3667150300010519,
+        "AP_medium": 0.5223430853214251,
+        "AP_large": 0.6010733354439503,
+        "AR_max1": 0.05319790828640386,
+        "AR_max10": 0.4542839903459373,
+        "AR_max100": 0.627815768302494,
+        "AR_small": 0.40393700787401576,
+        "AR_medium": 0.6309213759213759,
+        "AR_large": 0.6486451612903225
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a03\\label25_R_plus_S_seed29\\status.json",
+        "sha256": "249fdb3c1d4379a774568757dd6dfa43c97afabe9c0ae867e9715425c678f81c"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a03/job_table.json",
+        "bytes": 31689,
+        "sha256": "89bbb079d062088d5b46e96291008b5ba7b0d58bbe1d5cfd50a4008b0866dd5a"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a03/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a03/completion_verification.json",
+        "bytes": 6700,
+        "sha256": "92b7647d522cd9023cdfa257da68d02e2c6aa719c9cfe255ed9a1eb35f37bccf"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a03\\control\\CONTROL_MANIFEST.json",
+        "sha256": "6036a1902e0d821733289c07b2a0d39534b7a019dbcf0891805a04946824bd33"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a03/label25_R_plus_S_seed29/evaluation/step001500_final_final/summary.json",
+        "bytes": 583,
+        "sha256": "67b93d4a1224c1aa9b659c5b896881448968ae1ae4c9040fa6376bd655bd845b"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a03/label25_R_plus_S_seed29/checkpoints.jsonl",
+        "bytes": 1710,
+        "sha256": "35e18c359ec51fbbf99a7d55ac3ef878fb017faa91a8a9133e7f03592b4e0518"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a03\\label25_R_plus_S_seed29\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "817370f275620764d90ff9098d25085ad4226a5bd5e0e366e8ac2c06812c5848",
+        "bytes": 114285167,
+        "source_bindings_sha256": "d7620ae940ab9b7b67958e8fa72f21fa69f198757163f9936f4f63d7490b3bb9",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed29_N10_R",
+      "seed": 29,
+      "real_fraction": 0.1,
+      "N_R": 210,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.4831380807984544,
+        "AP50": 0.9189879320335161,
+        "AP75": 0.44796125392354363,
+        "AP_small": 0.3011853655406133,
+        "AP_medium": 0.46958779696846425,
+        "AP_large": 0.5594848458261333,
+        "AR_max1": 0.05121681415929204,
+        "AR_max10": 0.43278358809332274,
+        "AR_max100": 0.5732099758648431,
+        "AR_small": 0.33503937007874013,
+        "AR_medium": 0.5727764127764127,
+        "AR_large": 0.6152903225806452
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a05\\label10_R_seed29\\status.json",
+        "sha256": "073ac7156bbe8561714de94e1b4f3b143b2daec67c9f67ebc6a54cf0730312bd"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a05/job_table.json",
+        "bytes": 31675,
+        "sha256": "fa81d9c223f22a8e7359d4fc80ccb788ddb4ea1ae2d7f8e5808935fce8437de7"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a05/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a05/completion_verification.json",
+        "bytes": 6675,
+        "sha256": "9ab1bc40d2637d2ca1468dcb4e7f8f5ed1a78088f2c35a51ab72c4b9f0694c02"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a05\\control\\CONTROL_MANIFEST.json",
+        "sha256": "840a98a723b9ca4dbe150a2fc533daf289435454c1e8727084491631bec823d3"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a05/label10_R_seed29/evaluation/step001500_final_final/summary.json",
+        "bytes": 586,
+        "sha256": "5576a05e2c84c133336ce1aa9efc1244a51299d912923c0a05ff0da8a4bc2181"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed29_20261104_a05/label10_R_seed29/checkpoints.jsonl",
+        "bytes": 1686,
+        "sha256": "3c7288e2db15b84c144d3b57164270bf268852fbcb0356b91812abcbcf9032f9"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed29_20261104_a05\\label10_R_seed29\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "553d228e8adde17536472adfd3eedadd974fcf94709feb0201f0173e82329799",
+        "bytes": 114283311,
+        "source_bindings_sha256": "93ecbb8a037021c8a3948b47cf336e3cadcc233d8c9f608790f23b267127b775",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed29_N10_RS",
+      "seed": 29,
+      "real_fraction": 0.1,
+      "N_R": 210,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5066003565208544,
+        "AP50": 0.9362577906739905,
+        "AP75": 0.4859606818190443,
+        "AP_small": 0.330829044365063,
+        "AP_medium": 0.4940447206752295,
+        "AP_large": 0.5902608823100529,
+        "AR_max1": 0.05242357200321801,
+        "AR_max10": 0.4470635559131134,
+        "AR_max100": 0.5968222043443283,
+        "AR_small": 0.362992125984252,
+        "AR_medium": 0.5944348894348894,
+        "AR_large": 0.648516129032258
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a04\\label10_R_plus_S_seed29\\status.json",
+        "sha256": "0dc101454254092a95c91dc7dcb6929a0fb39a13681a4211b935d943f8452736"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a04/job_table.json",
+        "bytes": 31688,
+        "sha256": "4f3ad7943d242edd5d9a8724bf984290e39ebd02cb621ad63c5840fae348aafe"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a04/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a04/completion_verification.json",
+        "bytes": 6694,
+        "sha256": "640109432bc78f59f41ea0748bc9539bc249ea41ed47d14f2cec9693f03f91d0"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a04\\control\\CONTROL_MANIFEST.json",
+        "sha256": "0e1d98522a6169dc97c4c0444cb60b56eb368ced91bc81387e008ab46a723040"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a04/label10_R_plus_S_seed29/evaluation/step001500_final_final/summary.json",
+        "bytes": 579,
+        "sha256": "2a60171bc4fe457beec7ffabe260f65eca1bfa0e36fc84435bdf2ce6969209e5"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed29_20261104_a04/label10_R_plus_S_seed29/checkpoints.jsonl",
+        "bytes": 1710,
+        "sha256": "ec0d28ba2a1a160cbae542bd2e7d6d10ff52cda202fe701e2f5be6abdbe54b40"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed29_20261104_a04\\label10_R_plus_S_seed29\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "a226272ccf761071dc0b5e6a1df5ba2d2e661b03c853a79dc4278bec6b4aa685",
+        "bytes": 114283375,
+        "source_bindings_sha256": "c2c35893642157be5a7f960bbe4e9c4d1b526620f42ef38d764de89da751c75b",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed43_N100_R",
+      "seed": 43,
+      "real_fraction": 1.0,
+      "N_R": 2100,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5548304304623788,
+        "AP50": 0.9542435597028338,
+        "AP75": 0.577310722160515,
+        "AP_small": 0.3749476411350021,
+        "AP_medium": 0.5452225862087758,
+        "AP_large": 0.6205180484187872,
+        "AR_max1": 0.05559131134352373,
+        "AR_max10": 0.46645213193885765,
+        "AR_max100": 0.64635961383749,
+        "AR_small": 0.42598425196850387,
+        "AR_medium": 0.648931203931204,
+        "AR_large": 0.6694838709677419
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a01\\label100_R_seed43\\status.json",
+        "sha256": "e47dfdece9d112199cc60d5f408c87cf0815ce96d65c5338d755787339eed0d6"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a01/job_table.json",
+        "bytes": 31680,
+        "sha256": "7edd8d1a9432c51566406696bd5ae1b6d18657a6f712cf010dab6fd8b18efacd"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a01/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a01/completion_verification.json",
+        "bytes": 6668,
+        "sha256": "8bc2099c32757326d7f9085bf6e8303a9ec5bc83a297c6eb0fd246f40edafd8d"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a01\\control\\CONTROL_MANIFEST.json",
+        "sha256": "980b10aebc7d54ca4bb24389f9d46b0f0191e3dc13c532b7e55ab8b1d1faf964"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a01/label100_R_seed43/evaluation/step001500_final_final/summary.json",
+        "bytes": 581,
+        "sha256": "549245a65863f46451f40d1efd6fcbb7549d5577060d1b0cc98bf5ddf79e4818"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a01/label100_R_seed43/checkpoints.jsonl",
+        "bytes": 1689,
+        "sha256": "065e15c3288eafe4a753cc407fa8efb6b6c5c0d0a31218052a6f5b3e220818fe"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a01\\label100_R_seed43\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "192e3fe814efd44686bc9bb8f2b765e6b6a2d7acdc0f8243767ca72baf3906be",
+        "bytes": 114294511,
+        "source_bindings_sha256": "9801f0f7efcf66be3eaa8700a34219423926d70a1069e5844a4fea27ef655e49",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed43_N100_RS",
+      "seed": 43,
+      "real_fraction": 1.0,
+      "N_R": 2100,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5449718072989591,
+        "AP50": 0.9611659010621143,
+        "AP75": 0.5472771242107806,
+        "AP_small": 0.37888527739834893,
+        "AP_medium": 0.5344701275107009,
+        "AP_large": 0.607649147671987,
+        "AR_max1": 0.055148833467417537,
+        "AR_max10": 0.4597445695897024,
+        "AR_max100": 0.6422767497988737,
+        "AR_small": 0.42559055118110234,
+        "AR_medium": 0.6460319410319411,
+        "AR_large": 0.6583870967741936
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a01\\label100_R_plus_S_seed43\\status.json",
+        "sha256": "c8af93b5b8fbd0b8f2b0d37c379e5024d42cbed34693ba5da71fcd151edc79b6"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a01/job_table.json",
+        "bytes": 31693,
+        "sha256": "c79da64a3c081a3294a5b3e8a9cbd1b80c77ce07941d66fbdcd05ee7ab1970d6"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a01/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a01/completion_verification.json",
+        "bytes": 6709,
+        "sha256": "82691452f8f2db3c73d9631f868ce0a6eb875a9b1c37bf750170b8b0d8e0dcb0"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a01\\control\\CONTROL_MANIFEST.json",
+        "sha256": "5c28e7aad50a41fc288225be8e43ade34988c4e3e343de42e86e99e119f4ac4e"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a01/label100_R_plus_S_seed43/evaluation/step001500_final_final/summary.json",
+        "bytes": 585,
+        "sha256": "1cbb972cdb5e70472e0f195c4edd5ea17083eaa304c605c3d67d68634089036b"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a01/label100_R_plus_S_seed43/checkpoints.jsonl",
+        "bytes": 1713,
+        "sha256": "92f388ba317f0d9f1ec18d0b5ca4cabd4acc8a8cda342fe12b3419991fe7c90e"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a01\\label100_R_plus_S_seed43\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "cecc0c3e0c45e55bcedd3c774fcc3c5811b3bf4ad60ebd5dd955d053eb223003",
+        "bytes": 114294511,
+        "source_bindings_sha256": "2482cc600be12c9f0c9e806e72ad67eb57f082093e20070e4c6353251d7b9073",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed43_N50_R",
+      "seed": 43,
+      "real_fraction": 0.5,
+      "N_R": 1050,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5421815337435989,
+        "AP50": 0.9523656510477245,
+        "AP75": 0.5454367934941959,
+        "AP_small": 0.32203032072915283,
+        "AP_medium": 0.5323015769290727,
+        "AP_large": 0.6096363054875288,
+        "AR_max1": 0.05496781979082864,
+        "AR_max10": 0.4602373290426388,
+        "AR_max100": 0.6355691874497185,
+        "AR_small": 0.39566929133858264,
+        "AR_medium": 0.6385626535626536,
+        "AR_large": 0.6595483870967741
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a02\\label50_R_seed43\\status.json",
+        "sha256": "b9bb12ef61ab9ca70f69de13a21735526db6b5775eaa7de80396177e8c95e643"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a02/job_table.json",
+        "bytes": 31677,
+        "sha256": "7156c8ed3bfafe93c90a2832618fb22dc384f6d80557571f0fe853a96f98300e"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a02/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a02/completion_verification.json",
+        "bytes": 6670,
+        "sha256": "df5737bb9b0c5bf2dcd4ade92c4787d7a65df8cd96e504a0eca1dd1794831924"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a02\\control\\CONTROL_MANIFEST.json",
+        "sha256": "7e4f2ee834c3d3c8a72ea7692baf23a4fbd5d87876ac311b77346284af0d63ef"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a02/label50_R_seed43/evaluation/step001500_final_final/summary.json",
+        "bytes": 584,
+        "sha256": "81574bdb23cfeab43473a07b71869ae4334e1a72c67e67315f6db3e792cfbef2"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a02/label50_R_seed43/checkpoints.jsonl",
+        "bytes": 1686,
+        "sha256": "a9a1afa2e22fc35ec5865928f87d09cfda498eb999f7a2b42143446f4b4cf717"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a02\\label50_R_seed43\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "b5aa27f53cea3e67bd84795a6f88a393dc5bd31676a92771501ff037e6e1b6fb",
+        "bytes": 114288175,
+        "source_bindings_sha256": "2034070cc1c2bc2f06a7a0f1801b7c00f4954dcd2d2dbc23acfd4bd7b5dd51ac",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed43_N50_RS",
+      "seed": 43,
+      "real_fraction": 0.5,
+      "N_R": 1050,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5447330806964767,
+        "AP50": 0.9615876372358897,
+        "AP75": 0.5506419372720406,
+        "AP_small": 0.3677742223038705,
+        "AP_medium": 0.5329086038875562,
+        "AP_large": 0.6165896595634737,
+        "AR_max1": 0.0542538213998391,
+        "AR_max10": 0.46037811745776347,
+        "AR_max100": 0.6392598551890587,
+        "AR_small": 0.41338582677165353,
+        "AR_medium": 0.6414496314496315,
+        "AR_large": 0.6655483870967742
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a02\\label50_R_plus_S_seed43\\status.json",
+        "sha256": "ea9cea41e2b9235cb134323ebabd1750b162847ac831e8d404571fdcda545477"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a02/job_table.json",
+        "bytes": 31690,
+        "sha256": "f537e4ba1d4a42388461d359a37bec429bb2061b54a3c90d593ba2d03413791d"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a02/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a02/completion_verification.json",
+        "bytes": 6697,
+        "sha256": "52e139f8121289b0ef4b8210c73cf7a1bd081022f31fd58aaa34e129cdbaa735"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a02\\control\\CONTROL_MANIFEST.json",
+        "sha256": "8b25054f7ad4ee57dd39685d7e593a476c47e66e679cb76e7a9edc21bacc7f37"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a02/label50_R_plus_S_seed43/evaluation/step001500_final_final/summary.json",
+        "bytes": 584,
+        "sha256": "279c6f4325d3004cff1ebd4e576b86be678464d3d3550e8111a37f9f0e8817e2"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a02/label50_R_plus_S_seed43/checkpoints.jsonl",
+        "bytes": 1710,
+        "sha256": "31f45674fff6abae8b5af0d8b83017030bea284dbaffc8b434bef0ad60b1d289"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a02\\label50_R_plus_S_seed43\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "25a2fae52487cd6080e0cb20956f93f7b60309f4e527a6e16ef19de6cfb0cd33",
+        "bytes": 114288175,
+        "source_bindings_sha256": "ff6ac9c5455f06b55d55646b0bc2f4e3e8d30b667be18bcb97cd5c0d0b52e018",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed43_N25_R",
+      "seed": 43,
+      "real_fraction": 0.25,
+      "N_R": 525,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5143239769941162,
+        "AP50": 0.9403562200229939,
+        "AP75": 0.4948897820947188,
+        "AP_small": 0.31017365673995106,
+        "AP_medium": 0.5047022134648075,
+        "AP_large": 0.5777117986156047,
+        "AR_max1": 0.05314762670957361,
+        "AR_max10": 0.44583668543845534,
+        "AR_max100": 0.6075321802091713,
+        "AR_small": 0.37559055118110235,
+        "AR_medium": 0.6106019656019657,
+        "AR_large": 0.6301935483870967
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a03\\label25_R_seed43\\status.json",
+        "sha256": "edc27111bf3b9553379f56ef7cb8dbae56aa1ec4d1c454b559d2ee7560aa61b1"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a03/job_table.json",
+        "bytes": 31676,
+        "sha256": "f83b2eb48036551fcb4493db3155e9fa95dbf570ea8a710e742c221ac7fcb2e9"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a03/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a03/completion_verification.json",
+        "bytes": 6674,
+        "sha256": "2fc2eaf3d51868e3915f84a402b3233dc88461c7bc20a3a0cc56b54464d9a67e"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a03\\control\\CONTROL_MANIFEST.json",
+        "sha256": "b4b1dbd9396b8fd73790af08afe62224e26a2be0457a0fa03f856d8ef4421797"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a03/label25_R_seed43/evaluation/step001500_final_final/summary.json",
+        "bytes": 575,
+        "sha256": "265e62d3ede04a2835c1064d1c58db3c75af7ea5d56b1dec94b75d84b079b389"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a03/label25_R_seed43/checkpoints.jsonl",
+        "bytes": 1686,
+        "sha256": "70aab55ef8f46e1cb30253d44246edc1ad960a67e20b0535de946d5be5010d3b"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a03\\label25_R_seed43\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "6d722b9d04dcbe7b983453e40a2e281392bb4f00b46ee4b53755d64e72ab494c",
+        "bytes": 114285039,
+        "source_bindings_sha256": "039f5a8c66c3ebb3d5db082235cc9963ddf3261a9bc5e0623ab07a2ab7c620dc",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed43_N25_RS",
+      "seed": 43,
+      "real_fraction": 0.25,
+      "N_R": 525,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5284388658707133,
+        "AP50": 0.9588569046877232,
+        "AP75": 0.5138132650198034,
+        "AP_small": 0.340647104354083,
+        "AP_medium": 0.5173298537109937,
+        "AP_large": 0.5983677850999419,
+        "AR_max1": 0.05311745776347545,
+        "AR_max10": 0.45231295253419146,
+        "AR_max100": 0.6251206757843926,
+        "AR_small": 0.39448818897637794,
+        "AR_medium": 0.627960687960688,
+        "AR_large": 0.6486451612903225
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a03\\label25_R_plus_S_seed43\\status.json",
+        "sha256": "b3a2654e92162f192082b5d4779025ce0862b38a124ab425a9008b958a7c774f"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a03/job_table.json",
+        "bytes": 31689,
+        "sha256": "6d51b51d8f081bd27b3ce767ccebf9b879597073f165f0b7684715ec4ec5a464"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a03/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a03/completion_verification.json",
+        "bytes": 6694,
+        "sha256": "6ed9bcd1b8a6c29e813f583f9ad2b57b474f8748adf5ee2e91b3e3849a9c43f2"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a03\\control\\CONTROL_MANIFEST.json",
+        "sha256": "6beb9f73e2ff2789f08563cfe146b40c0d0f707b50c58472720ba29d4d3ebfff"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a03/label25_R_plus_S_seed43/evaluation/step001500_final_final/summary.json",
+        "bytes": 582,
+        "sha256": "d33e9af4c2fd71e0ea45d5bf03ae6fb85b096f105a940f07b794147e2f5a340f"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a03/label25_R_plus_S_seed43/checkpoints.jsonl",
+        "bytes": 1710,
+        "sha256": "607c017d078bc5c7b9fa2c3da5e3e5d3c2d5cf17f904bffef0c18b0862be73f0"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a03\\label25_R_plus_S_seed43\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "71926b9fbf6c1af34dfe993a9b9d8bd3d4238f0e2c5972cdadd914a838f0435c",
+        "bytes": 114285103,
+        "source_bindings_sha256": "c73ab2df342543ae464db03e8a987a7b4d451c419cd74838f9bba1341980e604",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed43_N10_R",
+      "seed": 43,
+      "real_fraction": 0.1,
+      "N_R": 210,
+      "strategy": "R",
+      "updates": 1500,
+      "exposures": {
+        "R": 24000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.4814423149903558,
+        "AP50": 0.9199267170116022,
+        "AP75": 0.4457694882495966,
+        "AP_small": 0.28836352047164937,
+        "AP_medium": 0.4658587062288529,
+        "AP_large": 0.5623148640440634,
+        "AR_max1": 0.051609010458567986,
+        "AR_max10": 0.4345937248592116,
+        "AR_max100": 0.5732099758648431,
+        "AR_small": 0.3401574803149606,
+        "AR_medium": 0.5713022113022113,
+        "AR_large": 0.6223225806451612
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a04\\label10_R_seed43\\status.json",
+        "sha256": "a74dec82e29d19c887bd595d3ee8a7b6e918792103e1e18d537da011901c88d0"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a04/job_table.json",
+        "bytes": 31675,
+        "sha256": "c804e2d65d774a3ecbdccf6c6cbf941fff112d4b346f9e262dc15b52a1162529"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a04/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a04/completion_verification.json",
+        "bytes": 6671,
+        "sha256": "dffc8e3b1462a99a2305f87176a5d136cfdcc3b560a0a615c62ac9ed3f5e54b8"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a04\\control\\CONTROL_MANIFEST.json",
+        "sha256": "e0db30ae9d275b9735dd85444a4131e0bd662c3d8202d3d554b0c7d613450344"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a04/label10_R_seed43/evaluation/step001500_final_final/summary.json",
+        "bytes": 574,
+        "sha256": "e359ba6e2395df53cb6902a2defee61de1b81d6c3870bbcb624265cfd16baf20"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_R_seed43_20261104_a04/label10_R_seed43/checkpoints.jsonl",
+        "bytes": 1686,
+        "sha256": "d373305442145f57e422d2de0ae8c1e7e473941029b2f7ece2905ea52223c0c0"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R_seed43_20261104_a04\\label10_R_seed43\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "6274f3424123ef89e880acb2c7ff6267b500d71af096ff5487ac3c403eacd8b8",
+        "bytes": 114283247,
+        "source_bindings_sha256": "b1877793f731d61f32fbac10d89581162e6b0c7051cb8934bace928fc6ffebf3",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    },
+    {
+      "category": "primary_label_curve",
+      "model_id": "seed43_N10_RS",
+      "seed": 43,
+      "real_fraction": 0.1,
+      "N_R": 210,
+      "strategy": "R+S",
+      "updates": 1500,
+      "exposures": {
+        "R": 12000,
+        "S": 12000
+      },
+      "metrics": {
+        "AP50_95": 0.5071367449052588,
+        "AP50": 0.9416786406022559,
+        "AP75": 0.48217543912399435,
+        "AP_small": 0.32603504638284025,
+        "AP_medium": 0.4931825447811627,
+        "AP_large": 0.5918620213899054,
+        "AR_max1": 0.052725261464199515,
+        "AR_max10": 0.445756234915527,
+        "AR_max100": 0.5953439259855189,
+        "AR_small": 0.3716535433070866,
+        "AR_medium": 0.5932923832923833,
+        "AR_large": 0.6439354838709678
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a04\\label10_R_plus_S_seed43\\status.json",
+        "sha256": "4f4e7b217dd11a8f19a92d4f24d913c48ac76500add326d59b78db4ed2ec6aee"
+      },
+      "job_table_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a04/job_table.json",
+        "bytes": 31688,
+        "sha256": "5e2360b709344a511593532f2642e398c9130e7273339501e996fa26ae486050"
+      },
+      "code_bindings_reference": {
+        "path": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a04/code_bindings.json",
+        "bytes": 3487,
+        "sha256": "051941b4d99a9b4679378c4ce5f08332bf4aca7b43184d66ef92ada6f3c20c88"
+      },
+      "completion_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a04/completion_verification.json",
+        "bytes": 6702,
+        "sha256": "5958e9e599aed713baad5e152b0438ff4e158dd87b0671541cf67642a20c6ea9"
+      },
+      "control_manifest_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a04\\control\\CONTROL_MANIFEST.json",
+        "sha256": "72acf5b926476642a91e0b8e59f5c116cbdee2f2455499a3bc6fb95dd5d86d59"
+      },
+      "terminal_summary_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a04/label10_R_plus_S_seed43/evaluation/step001500_final_final/summary.json",
+        "bytes": 574,
+        "sha256": "855f9dd6265b2ec7f2963ba9542586a3267c890b21952861b7fad734ebf3cf91"
+      },
+      "checkpoint_index_reference": {
+        "path": "G:/FutsalMOT_Training/runs/main_bbox_yolo11s_soccernet_RS_seed43_20261104_a04/label10_R_plus_S_seed43/checkpoints.jsonl",
+        "bytes": 1710,
+        "sha256": "cd8cee1426823f11966d347b74cf00b6cc7d27975d6ba7a1123cefa528a1a37f"
+      },
+      "terminal_checkpoint_receipt": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed43_20261104_a04\\label10_R_plus_S_seed43\\checkpoints\\001500_final_001500_final.pt",
+        "sha256": "cfb8d90558289385360226e0466583b3043e557c03bc2e3115ea970e5b364e1c",
+        "bytes": 114283247,
+        "source_bindings_sha256": "40be0790c97a95a72e23153ac94c20f0975565a01d36f415488133b6a14c3eb5",
+        "schema_version": "futsalmot_checkpoint_v1",
+        "producer": "futsalmot.records/v1"
+      }
+    }
+  ],
+  "secondary_models": [
+    {
+      "category": "formal_secondary",
+      "role": "same_total_budget_R_reference",
+      "group": "bbox_s_soccernet_seed17_core_20261102_a01",
+      "job_id": "R_seed17",
+      "seed": 17,
+      "updates": 6563,
+      "exposures": {
+        "R": 105008,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5165115374980012,
+        "AP50": 0.941099523964852,
+        "AP75": 0.5056873088257927,
+        "AP_small": 0.33257477789442114,
+        "AP_medium": 0.5057760772141966,
+        "AP_large": 0.5835367728536506,
+        "AR_max1": 0.05302695092518102,
+        "AR_max10": 0.45075422365245377,
+        "AR_max100": 0.6037510056315366,
+        "AR_small": 0.38661417322834646,
+        "AR_medium": 0.6047788697788699,
+        "AR_large": 0.6348387096774194
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\R_seed17\\status.json",
+        "sha256": "ab76d08c7220c5e93dca75e9c0ee996b9e40846444e0e4b2048ca2aad7e5154e"
+      },
+      "job_table_reference": {
+        "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\job_table.json",
+        "sha256": "b97371e2812779597db5bcb517ad14b10b191b8f9510ab75678bd04b71fefa68"
+      },
+      "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
+    },
+    {
+      "category": "formal_secondary",
+      "role": "long_RR_source_control",
+      "group": "bbox_s_soccernet_seed17_core_20261102_a01",
+      "job_id": "R_to_R_seed17",
+      "seed": 17,
+      "updates": 36750,
+      "exposures": {
+        "R": 588000,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.4665311479396385,
+        "AP50": 0.899551370752138,
+        "AP75": 0.42668455855582854,
+        "AP_small": 0.26395451240516327,
+        "AP_medium": 0.45783805925092397,
+        "AP_large": 0.5448367483423882,
+        "AR_max1": 0.051739742558326626,
+        "AR_max10": 0.43326629123089305,
+        "AR_max100": 0.5537208366854385,
+        "AR_small": 0.29606299212598425,
+        "AR_medium": 0.5532186732186732,
+        "AR_large": 0.5994193548387097
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\R_to_R_seed17\\status.json",
+        "sha256": "f39f6770f0e081a56326eec54a1c89f524f9a98b54819271f16ebdcfa602a22e"
+      },
+      "job_table_reference": {
+        "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\job_table.json",
+        "sha256": "b97371e2812779597db5bcb517ad14b10b191b8f9510ab75678bd04b71fefa68"
+      },
+      "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
+    },
+    {
+      "category": "formal_secondary",
+      "role": "long_SR_source_control",
+      "group": "main_bbox_yolo11s_soccernet_S2R_seed17_20261102_a02",
+      "job_id": "S_to_R_seed17",
+      "seed": 17,
+      "updates": 36750,
+      "exposures": {
+        "R": 105008,
+        "S": 482992
+      },
+      "metrics": {
+        "AP50_95": 0.485407098793604,
+        "AP50": 0.9154250233531986,
+        "AP75": 0.4531668334274502,
+        "AP_small": 0.3091567701594757,
+        "AP_medium": 0.4747594983177036,
+        "AP_large": 0.5675745270598338,
+        "AR_max1": 0.05189058728881737,
+        "AR_max10": 0.4310740144810941,
+        "AR_max100": 0.5773028962188255,
+        "AR_small": 0.35669291338582676,
+        "AR_medium": 0.575921375921376,
+        "AR_large": 0.6218709677419355
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_S2R_seed17_20261102_a02\\S_to_R_seed17\\status.json",
+        "sha256": "89592e698b87acf84f8c0eb52032fa345b96f8852b42a622813723312ca8a3c8"
+      },
+      "job_table_reference": {
+        "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\main_bbox_yolo11s_soccernet_S2R_seed17_20261102_a02\\job_table.json",
+        "sha256": "40a4a3dedb5588773c8e171cb27a92a536f073c9b4fd67b9908eec1813dcdbdf"
+      },
+      "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
+    },
+    {
+      "category": "formal_secondary",
+      "role": "same_total_budget_mixed",
+      "group": "main_bbox_yolo11s_soccernet_RS_seed17_20261103_a01",
+      "job_id": "R_plus_S_fixed_budget_seed17",
+      "seed": 17,
+      "updates": 6563,
+      "exposures": {
+        "R": 52504,
+        "S": 52504
+      },
+      "metrics": {
+        "AP50_95": 0.5393183988067314,
+        "AP50": 0.9570249787145262,
+        "AP75": 0.5460631695185958,
+        "AP_small": 0.3819022472769935,
+        "AP_medium": 0.5286679643890724,
+        "AP_large": 0.6039763825979725,
+        "AR_max1": 0.054625905068382954,
+        "AR_max10": 0.45919147224456963,
+        "AR_max100": 0.6293443282381335,
+        "AR_small": 0.42519685039370075,
+        "AR_medium": 0.6313390663390664,
+        "AR_large": 0.6529677419354838
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261103_a01\\R_plus_S_fixed_budget_seed17\\status.json",
+        "sha256": "064ef34fbe27f2efb84f5810ad915f5d1d77de5ae5a69c1376bbe9233674f4b4"
+      },
+      "job_table_reference": {
+        "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\main_bbox_yolo11s_soccernet_RS_seed17_20261103_a01\\job_table.json",
+        "sha256": "edf94c68ae8990991a838402cb62d92c97a57850c28ac1ac18b177c6000466fb"
+      },
+      "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
+    },
+    {
+      "category": "formal_secondary",
+      "role": "short_SR_predeclared_pair",
+      "group": "main_bbox_yolo11s_soccernet_S2R_seed17_20261103_a02",
+      "job_id": "short2_S_to_R_seed17",
+      "seed": 17,
+      "updates": 6563,
+      "exposures": {
+        "R": 81008,
+        "S": 24000
+      },
+      "metrics": {
+        "AP50_95": 0.5193718544942069,
+        "AP50": 0.9491886402473647,
+        "AP75": 0.5093377663553025,
+        "AP_small": 0.35500903361665503,
+        "AP_medium": 0.5105453019247118,
+        "AP_large": 0.58542286953441,
+        "AR_max1": 0.05335880933226066,
+        "AR_max10": 0.4517095736122284,
+        "AR_max100": 0.6148129525341914,
+        "AR_small": 0.4031496062992126,
+        "AR_medium": 0.6167076167076166,
+        "AR_large": 0.6399999999999999
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_S2R_seed17_20261103_a02\\short2_S_to_R_seed17\\status.json",
+        "sha256": "6eaea587c60de68c743264c13ca2c1c47a156d3571b36ca6c53290ce6412fffa"
+      },
+      "job_table_reference": {
+        "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\main_bbox_yolo11s_soccernet_S2R_seed17_20261103_a02\\job_table.json",
+        "sha256": "320f2bb407e765d47645afda1b6daf043029d422a3b93243346913215e13f56c"
+      },
+      "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
+    },
+    {
+      "category": "formal_secondary",
+      "role": "short_RR_predeclared_pair",
+      "group": "main_bbox_yolo11s_soccernet_R2R_seed17_20261103_a01",
+      "job_id": "short2_R_to_R_seed17",
+      "seed": 17,
+      "updates": 6563,
+      "exposures": {
+        "R": 105008,
+        "S": 0
+      },
+      "metrics": {
+        "AP50_95": 0.5239314248147453,
+        "AP50": 0.9431883152301549,
+        "AP75": 0.5225501088128192,
+        "AP_small": 0.35653676166936504,
+        "AP_medium": 0.5145290429139183,
+        "AP_large": 0.5847682452626696,
+        "AR_max1": 0.0537510056315366,
+        "AR_max10": 0.45401246983105387,
+        "AR_max100": 0.6077534191472245,
+        "AR_small": 0.39448818897637794,
+        "AR_medium": 0.6085380835380835,
+        "AR_large": 0.6395483870967741
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_R2R_seed17_20261103_a01\\short2_R_to_R_seed17\\status.json",
+        "sha256": "e4b3a4346800441c39afe44067b9ac72552825d9de3b154055155a6e5daae6c2"
+      },
+      "job_table_reference": {
+        "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\main_bbox_yolo11s_soccernet_R2R_seed17_20261103_a01\\job_table.json",
+        "sha256": "31d5c573dceba4c5a1c98166c67e3e55301b5411aeb3363e15acabfd5e1e2c9d"
+      },
+      "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
+    }
+  ],
+  "budget_calibrations": [
+    {
+      "category": "formal_budget_calibration",
+      "group": "bbox_s_seed17_calibration_20261101_a02",
+      "job_id": "R50_seed17",
+      "seed": 17,
+      "updates": 6563,
+      "metrics": {
+        "AP50_95": 0.5165115374980012,
+        "AP50": 0.941099523964852,
+        "AP75": 0.5056873088257927,
+        "AP_small": 0.33257477789442114,
+        "AP_medium": 0.5057760772141966,
+        "AP_large": 0.5835367728536506,
+        "AR_max1": 0.05302695092518102,
+        "AR_max10": 0.45075422365245377,
+        "AR_max100": 0.6037510056315366,
+        "AR_small": 0.38661417322834646,
+        "AR_medium": 0.6047788697788699,
+        "AR_large": 0.6348387096774194
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_seed17_calibration_20261101_a02\\R50_seed17\\status.json",
+        "sha256": "97a0193d5888ecf761fbd484dded40860de69041046ff5ed2e3b0eb12813b174"
+      },
+      "protocol_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_seed17_calibration_20261101_a02\\R50_protocol.json",
+        "sha256": "0376e6e7f8c44225d1ab285fce434276cf4504480f2a32fa57b58044a9c47d79"
+      },
+      "interpretation": "predeclared endpoint budget choice; not pooled with primary1500 results"
+    },
+    {
+      "category": "formal_budget_calibration",
+      "group": "bbox_s_seed17_calibration_20261101_a03_storage500",
+      "job_id": "R100_seed17",
+      "seed": 17,
+      "updates": 13125,
+      "metrics": {
+        "AP50_95": 0.4957188790826453,
+        "AP50": 0.9264702099429764,
+        "AP75": 0.461668426939532,
+        "AP_small": 0.3492485664667982,
+        "AP_medium": 0.48508734055808056,
+        "AP_large": 0.5577072589060098,
+        "AR_max1": 0.051407884151246974,
+        "AR_max10": 0.4401146419951729,
+        "AR_max100": 0.5813757039420756,
+        "AR_small": 0.3862204724409448,
+        "AR_medium": 0.5813390663390664,
+        "AR_large": 0.6149032258064516
+      },
+      "status_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_seed17_calibration_20261101_a03_storage500\\R100_seed17\\status.json",
+        "sha256": "5e974a4c73a22725fc78a3839c4495391852660fc48d8c5eee0ce261f22bcfc0"
+      },
+      "protocol_reference": {
+        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_seed17_calibration_20261101_a03_storage500\\R100_protocol.json",
+        "sha256": "e060711c6b1d981e7e61d450cf8d1401df7a81f45fb42aeaa19312fe5144ed98"
+      },
+      "interpretation": "predeclared endpoint budget choice; not pooled with primary1500 results"
+    }
+  ],
+  "confirmation_results_reference": {
+    "path": "G:\\FutsalMOT_Training\\runs\\bbox_confirmation_suite_20261105_a01\\confirmation_comparison.json",
+    "sha256": "a4b108adc407141349a38c950432cf3fc5fb1548ab3bc6fa04f0ece8fd42cc19"
+  },
+  "confirmation_completion_reference": {
+    "path": "G:\\FutsalMOT_Training\\runs\\bbox_confirmation_suite_20261105_a01\\completion_verification.json",
+    "sha256": "2137004730c8f49c864cc92db729f72e272de62becebb2854f23a8d6edb99de1"
+  },
+  "confirmation_result_manifest_reference": {
+    "path": "G:\\FutsalMOT_Training\\runs\\bbox_confirmation_suite_20261105_a01\\RESULTS_MANIFEST.json",
+    "sha256": "60f150dc79acee50375abf0d7d44b3af4a6f332f815fe4f291b3c0e7ffc0fc50"
+  },
+  "development_reference": {
+    "path": "G:\\FutsalMOT_Training\\runs\\bbox_label_curve_batch_20261104_a02\\label_curve_development_comparison.json",
+    "sha256": "6206739a6ce2c4ca25c4a86981917c28e96c41e19d0028301266fc5ffc57ac7b"
+  },
+  "domain_gap_reference": {
+    "path": "G:\\FutsalMOT_Training\\runs\\bbox_domain_gap_train_dev_20261104_a01\\summary.json",
+    "sha256": "97b1f58fa141578c663abafba4c62f44e95a54e3bfe92fefade04898610b83e6"
+  },
+  "immutable_plans": {
+    "EXPERIMENTS.md": {
+      "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\docs\\plan\\EXPERIMENTS.md",
+      "sha256": "32c9415b2d81de7fce6a9221af72495822ffe3b70e537004b7bb64af02b065a2"
+    },
+    "PAPER.md": {
+      "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\docs\\plan\\PAPER.md",
+      "sha256": "d48cb4160a513773cde0e910fe1c45c7eb5a63bf058871eafd38e9ad27b71c17"
+    },
+    "DATASET.md": {
+      "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\docs\\plan\\DATASET.md",
+      "sha256": "4ca51208147182bb558cc28102a91e55bf2921ebdcf692a20619cc9edc67df57"
+    }
+  },
+  "retired_nonformal": {
+    "old_S3000_prefix": "physical model/predictions/control removed per explicit2026-11-05 cleanup; never included in primary or secondary table",
+    "source_only_exception": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_S2R_seed17_20261103_a01/code remains an immutable source ancestor required by budget1500/short_pair/fixed_mix; it is not an executable retained experiment",
+    "microbenchmark": "CPU filter benchmark removed; no formal inference acceleration claimed"
+  },
+  "preservation_policy": "All approved primary/secondary/calibration results, including negative results, and their required source/GT/initialization/admission/failure/stop/control provenance remain. No GT, published synthetic data, cache, public weights, Seg/Pose or UE files deleted."
+}

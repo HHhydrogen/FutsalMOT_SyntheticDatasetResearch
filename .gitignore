@@ -1,0 +1,17 @@
+# 本地环境、数据、模型与完整运行证据不入Git
+/runs/
+/weights/
+/cache/
+/.venv/
+/venv/
+/.pytest_cache/
+__pycache__/
+*.pyc
+*.pt
+*.pth
+# 本机只读服务登记与日志
+/.training_monitor*.json
+/.bbox_confirmation_monitor.json
+/.training_monitor*.log
+# 已有本地文献PDF不是本次BBox源码提交
+/docs/paper/*.pdf

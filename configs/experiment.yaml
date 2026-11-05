@@ -1,0 +1,317 @@
+{
+  "schema_version": "experiment_candidate_v1",
+  "task": "detect",
+  "model": "yolo11s",
+  "seed": 17,
+  "real_datasets": {
+    "soccernet": "G:/FutsalMOT_Dataset/real/soccernet/dataset.json",
+    "sportsmot": "G:/FutsalMOT_Dataset/real/sportsmot/dataset.json"
+  },
+  "synthetic_dataset": "G:/FutsalMOT_Dataset/synthetic/dataset.json",
+  "candidate_budget": {
+    "real_panel": "soccernet",
+    "N_R": 2100,
+    "N_S": 24149,
+    "epochs_S": 20,
+    "epochs_R": 50,
+    "R_epoch_calibration_complete": false,
+    "synthetic_pool_rule": "all_published_train_RGB_frames_all_actual_cameras_preserve_seed_split",
+    "U_S": 30187,
+    "U_R50": 6563,
+    "U_R100": 13125
+  },
+  "numeric": {
+    "effective_batch": 16,
+    "microbatch": null,
+    "accumulation": null,
+    "nbs": 16,
+    "mode": null,
+    "candidate_mode": "amp_bf16",
+    "mode_frozen": false,
+    "imgsz": 960,
+    "optimizer": "SGD",
+    "nesterov": true,
+    "first_peak_lr": 0.01,
+    "final_peak_lr": 0.001,
+    "lrf": 0.01,
+    "momentum": 0.937,
+    "weight_decay": 0.0005,
+    "clip_gradient_norm": 10,
+    "mosaic": 0,
+    "mixup": 0,
+    "copy_paste": 0
+  },
+  "environment_candidate": {
+    "python": "3.12.13",
+    "torch": "2.8.0+cu128",
+    "torchvision": "0.23.0+cu128",
+    "ultralytics": "8.3.237",
+    "validated": false,
+    "installed": true,
+    "cpu_import_and_ops_validated": true,
+    "cuda_build": "12.8",
+    "cuda_runtime_validated": false
+  },
+  "gate": {
+    "protocol_frozen": false,
+    "data_frozen": false,
+    "synthetic_complete": true,
+    "gpu_released": true,
+    "resource_precheck_passed": false,
+    "numeric_precheck_passed": false,
+    "training_authorized": false,
+    "test_open_authorized": false
+  },
+  "capabilities": {
+    "index_inspection": true,
+    "budget_preview": true,
+    "YOLO_label_adapters": false,
+    "YOLO_training_loop": false,
+    "metric_evaluation": false,
+    "BBox_annotation_interfaces": true,
+    "checkpoint_io_CPU_verified": true,
+    "RNG_CPU_restore_verified": true,
+    "synthetic_layout_dry_run": true,
+    "ignore_criterion_CPU_verified": true,
+    "given_bbox_AP_helper_CPU_verified": true,
+    "deterministic_letterbox_CPU_verified": true,
+    "BBox_collate_CPU_verified": true,
+    "committed_prefetch_sampler_CPU_verified": true,
+    "real_clip_annotation_cache_CPU_verified": true,
+    "synthetic_frame_offset_index_CPU_verified": true,
+    "checkpoint_budget_math_CPU_verified": true,
+    "request_dataset_CPU_fixture_verified": true,
+    "batch_normalization_CPU_verified": true,
+    "loss_scalarization_CPU_verified": true,
+    "EMA_state_CPU_verified": true,
+    "synthetic_layout_apply_verified": true,
+    "canonical_synthetic_catalogue_metadata_verified": true
+  },
+  "execution_authorization": {
+    "source": "user_2026-11-02_continue_original_plan",
+    "current_phase": "formal_seed17_R_and_R_to_R_running_S_to_R_input_performance_pending",
+    "requires_full_synthetic_publication": true,
+    "requires_no_production_writers_and_GPU_release": true,
+    "primary_real_panel": "soccernet",
+    "maximum_formal_detection_runs": 3,
+    "expand_matrix_automatically": false,
+    "research_followup_deadline_utc": "2026-11-07T23:55:00Z",
+    "actual_runtime": "futsalmot.formal",
+    "active_control_group": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\bbox_s_soccernet_seed17_core_20261102_a01",
+    "active_output_group": "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01",
+    "active_jobs": [
+      "R_seed17",
+      "R_to_R_seed17"
+    ],
+    "followup_id": "bbox-r-r-r",
+    "S_cache_batch_build_authorized": true,
+    "S_cache_authorization": "direct_user_answer_2026-11-02",
+    "cache_builder_identity": {
+      "pid": 8952,
+      "create_time": 1793593821.227307,
+      "cmdline": [
+        "C:\\Users\\20113\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-u",
+        "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\cache_extend_c01\\launch.py"
+      ]
+    },
+    "cache_target": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\cache\\synthetic_bbox_960_v2",
+    "cache_build_state": "BUILDING",
+    "conditionally_authorized_next_job": "S_to_R_seed17_after_cache_READY_core_closed_cached_preflight_and_resource_gate",
+    "cached_GPU_preflight_executed": false,
+    "cache_failure": "available_physical_memory_below_4GiB_at5437_rows",
+    "cache_legacy_builder_identity": {
+      "pid": 9804,
+      "create_time": 1793577629.283057,
+      "cmdline": [
+        "C:\\Users\\20113\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-u",
+        "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\cache_build.launch.py"
+      ]
+    },
+    "cache_legacy_target": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\cache\\synthetic_bbox_960_v1",
+    "cache_legacy_build_state": "FAIL_STOP",
+    "cache_resume_evidence": "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\cache_extend_c01",
+    "cache_source_rate_ceiling_bytes_per_second": 100000000,
+    "cache_automatic_rate_increase": false,
+    "cache_absolute_deadline_utc": "2026-11-04T22:30:21.146105+00:00",
+    "cache_18h_extension_enabled": false,
+    "cache_prior_resume_attempts": [
+      {
+        "identity": {
+          "pid": 27536,
+          "create_time": 1793581385.3155513,
+          "cmdline": [
+            "C:\\Users\\20113\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "-u",
+            "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\cache_resume_r01\\launch.py"
+          ]
+        },
+        "evidence": "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\cache_resume_r01",
+        "state": "FAIL_STOP",
+        "failure": "negative_sleep_metadata_charge_timing_race",
+        "v2_outputs_created": false
+      }
+    ],
+    "cache_infrastructure_retry_number": 1,
+    "cache_maximum_infrastructure_retries": 1,
+    "active_core_original_EXPERIMENTS_sha256": "46aa2fe83daf99bc0a2e1880f593eb36b2c11297b95f8eaaf479de19c4401446",
+    "latest_authorized_EXPERIMENTS_sha256": "3814e51504548a39e6b88fdf073a4377ba22b6ddf7b1607330bfb1664c6eac67",
+    "active_jobs_state": "R_COMPLETE_R_to_R_RUNNING",
+    "cache_resume_failure": {
+      "evidence": "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\cache_resume_r02",
+      "failed_at_utc": "2026-11-02T04:00:32.527201+00:00",
+      "error_type": "TimeoutError",
+      "error": "original cache absolute deadline reached",
+      "completed_rows": 6419,
+      "target_rows": 24149,
+      "legacy_reused_rows": 5437,
+      "new_rows": 982,
+      "writer_and_wrapper_exited": true,
+      "partial_manifest_sha256": "8af63689de69895ef07a19154c374a890c8c36503d3dc580678b4765ae5a652b",
+      "automatic_resume_allowed": false,
+      "S_to_R_input_gate": "BLOCKED_cache_not_READY"
+    },
+    "cache_extension_authorization": {
+      "source": "2026-11-02 direct user: allow longer finite cache build, reuse6419, Real priority, old4h no longer applies",
+      "approved_new_max_seconds": 237600,
+      "budget_hours": 66,
+      "remaining_rows": 17730,
+      "observed_new_rows": 982,
+      "observed_outer_seconds": 10231.828,
+      "estimated_hours_at_observed_rate": 51.315430651731155,
+      "margin25percent_hours": 64.14428831466394,
+      "new_absolute_deadline": "frozen at unique continuation dispatch +66h, capped by research global deadline",
+      "old_deadline_applies_to_new_run": false,
+      "rate_bytes_per_second": 100000000,
+      "state": "BUILDING_PREFIX_VERIFIED",
+      "evidence": "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\cache_extend_c01",
+      "identity": {
+        "pid": 8952,
+        "create_time": 1793593821.227307,
+        "cmdline": [
+          "C:\\Users\\20113\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-u",
+          "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\cache_extend_c01\\launch.py"
+        ]
+      },
+      "absolute_deadline_utc": "2026-11-04T22:30:21.146105+00:00",
+      "launch_sha256": "3a553eab6755395379d64822bd290c86d5cdb3d19f7fb5da2e4ea8a3ae794f79",
+      "resume_plan_sha256": "8359706d9c53519e813411bf7a696ec755d31809224b61dab019e75db6fab61b",
+      "code_bindings_sha256": "9537a56480b8496aca0aff366b5a9b880b14488231da32f8dbc540fc3cd75995",
+      "prefix_verified_rows": 6419,
+      "prefix_receipt_sha256": "01dfb25f4377cad07f55cbc6029c823654d32da03846f28150803b4db42ea211"
+    },
+    "followup_scope": {
+      "cache_only_routine_observation": true,
+      "manual_training_progress_observation": false,
+      "frozen_cache_Real_priority_unchanged": true,
+      "one_time_GPU_admission_check_after_cache_READY_required": true
+    },
+    "current_scope_decision": {
+      "source": "2026-11-02 direct user",
+      "task": "BBox",
+      "model": "YOLO11s",
+      "training_seeds": [
+        17
+      ],
+      "formal_strategies": [
+        "R",
+        "R->R",
+        "S->R"
+      ],
+      "multiseed": "deferred_until_progress_resource_decision",
+      "other_sizes": "retained_in_plan_wait_s_results_then_user_decision",
+      "Pose_Seg": "paper_core_detailed_plan_pending_not_TODO",
+      "terminal_only_validation": "approved_for_future_unfrozen_runs_only",
+      "active_private_bindings_unchanged": true
+    },
+    "future_validation_policy": {
+      "evaluation_policy": "phase_endpoints_v1",
+      "evaluation_every": null,
+      "per_phase_points": [
+        "0",
+        "final"
+      ],
+      "single_stage_passes": 2,
+      "two_stage_passes": 4,
+      "checkpoint_every": 500,
+      "per_step_logs_retained": true,
+      "active_frozen_runs_unchanged": true,
+      "resource_estimate": {
+        "scope": "candidate_only_not_admission_old_measured_size_keep_full_logs_checkpoints_failure_margin",
+        "S_to_R_validation_count": 4,
+        "S_to_R_checkpoint_count": 77,
+        "S_to_R_complete_upper_GiB_using_previous_measured_formula": 110.180771978572,
+        "G_additional_reserve_GiB": 100,
+        "D_control_upper_MiB": 32,
+        "D_additional_reserve_GiB": 100,
+        "actual_measurement_and_deadline_gate_required": true
+      }
+    }
+  },
+  "data_bindings": {
+    "status": "metadata_verified_not_formal_run_freeze",
+    "synthetic_index_sha256": "8aff1d86371211e16fd493f5dbc0ddb5a09820a12190dd58d6f6d86d7416787a",
+    "synthetic_relocation_sha256": "cfa0fc5013e8c303c94fe9a45322ddb95ff6ea44e7e16e9814e1e20f726afe5f",
+    "source_manifest_sha256": "274b5472da3219e438274cc1362c045b666aa591ec391adc538ecdee54ceb9c7",
+    "soccernet_index_sha256": "8dbf20aaa643c97f898905530ecc784468934f27d352e58c6d106257a0bde9e8",
+    "synthetic_order": "index_seed_then_original_camera_ids_then_ascending_frame",
+    "ordered_pool_sha256": {
+      "S_train": "7e66aca666e0e46ff74ad24b5bedaaf8eb70acd70e51d24347cdb99bbb0b29db",
+      "S_dev": "c3f7e06bddcbfbd15c9d5b6e4c2aafb363b22f54639091276d6546188636e5ea",
+      "R_train": "2c8142b605349f7061bc33fb36358976171662a11dd722b8aff6f90ada28b5d0",
+      "R_val": "0cffac2b599794acd4357caf99dab893e2e6eb899cb4abe00b505343c379bbeb"
+    },
+    "synthetic_train_images": 24149,
+    "synthetic_dev_images": 6030,
+    "soccernet_train_images": 2100,
+    "soccernet_val_images": 750,
+    "test_GT_or_media_opened": false
+  },
+  "storage_policy": {
+    "checkpoint_every_for_new_independent_runs": 500,
+    "checkpoint_also_at": [
+      "phase0",
+      "phase_final",
+      "controlled_stop_or_failure_boundary"
+    ],
+    "retain_all_existing_checkpoints": true,
+    "archive_root": "G:/FutsalMOT_Training/runs",
+    "active_working_set": "G:/FutsalMOT_Training/runs",
+    "archive_after_quiescent_terminal_only": true,
+    "copy_and_target_SHA_verified_before_source_release": true,
+    "keep_D_pointer_only_after_release": true,
+    "D_reserve_GiB": 100,
+    "G_reserve_GiB": 100,
+    "all_step_logs_and_validation_raw_predictions_retained": true,
+    "active_legacy_group": "bbox_s_seed17_calibration_20261101_a02",
+    "active_legacy_checkpoint_every": 50,
+    "legacy_candidate_lifecycle_and_resource_helpers_not_formal_runtime": true,
+    "actual_runtime": "futsalmot.formal",
+    "EXPERIMENTS_sha256": "3814e51504548a39e6b88fdf073a4377ba22b6ddf7b1607330bfb1664c6eac67",
+    "mode": "direct_g",
+    "control_root": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs"
+  },
+  "naming_policy": {
+    "approved_by": "direct_user_2026-11-02_write_design_and_apply",
+    "display": "阶段｜任务｜模型｜数据源｜策略｜训练seed",
+    "new_single_job_group": "{purpose}_{task}_{model}_{panel}_{strategy}_seed{seed}_{YYYYMMDD}_a{NN}",
+    "generator": "tools.training_monitor.canonical_group_name",
+    "date_timezone": "Asia/Shanghai",
+    "legacy_IDs_and_paths_preserved": true,
+    "monitor_version": 6
+  }
+}

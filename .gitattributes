@@ -1,0 +1,2 @@
+# 科学协议与源码按原始字节SHA绑定，不自动转换换行；CRLF是合法原始格式。
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

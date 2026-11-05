@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "futsalmot-research"
+version = "0.1.0"
+description = "可审计的足球合成数据研究准备工具"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+futsalmot = "futsalmot.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

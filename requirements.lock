@@ -1,0 +1,43 @@
+# Windows x86_64；CPython 3.12.13。仅锁定实际已安装第三方依赖，本地editable项目由pyproject.toml管理。
+# 已通过CPU导入/算子与pip check；Torch CUDA构建12.8，CUDA运行/显存与模型训练推理未验证。
+# torch官方wheel 3461384651字节；torchvision官方wheel 7540039字节；完整官方SHA绑定于下列URL。
+certifi==2026.10.23
+charset-normalizer==3.5.2
+contourpy==1.4.0
+cycler==0.12.1
+filelock==4.2.6
+fonttools==4.68.0
+fsspec==2026.9.0
+idna==3.20
+Jinja2==3.1.6
+kiwisolver==1.5.1
+MarkupSafe==3.0.4
+matplotlib==3.11.2
+mpmath==1.3.0
+networkx==3.7
+numpy==2.2.6
+opencv-python==4.12.0.88
+packaging==26.3
+pillow==13.0.0
+pip==26.2.2
+polars==2.1.0
+polars-runtime-32==2.1.0
+psutil==7.2.2
+pyparsing==3.3.3
+python-dateutil==3.0.0
+PyYAML==6.0.3
+requests==2.34.2
+scipy==1.18.1
+setuptools==80.9.0
+six==1.17.0
+sympy==1.14.0
+torch @ https://download.pytorch.org/whl/cu128/torch-2.8.0%2Bcu128-cp312-cp312-win_amd64.whl#sha256=0ad925202387f4e7314302a1b4f8860fa824357f9b1466d7992bf276370ebcff
+torchvision @ https://download.pytorch.org/whl/cu128/torchvision-0.23.0%2Bcu128-cp312-cp312-win_amd64.whl#sha256=20fa9c7362a006776630b00b8a01919fedcf504a202b81358d32c5aef39956fe
+typing_extensions==4.16.0
+tzdata==2026.6
+ultralytics==8.3.237
+ultralytics-thop==2.2.3
+urllib3==2.8.0
+
+# 用户批准的标准BBox COCO API；官方PyPI cp312-abi3 Windows wheel，76824字节。
+pycocotools @ https://files.pythonhosted.org/packages/e1/31/d87f781759b2ad177dd6d41c5fe0ce154f14fc8b384e9b80cd21a157395b/pycocotools-2.0.10-cp312-abi3-win_amd64.whl#sha256=998a88f90bb663548e767470181175343d406b6673b8b9ef5bdbb3a6d3eb3b11
