@@ -1169,7 +1169,7 @@ def create_server(research_root, archive_root, *, port=8765, html_path=None, dur
     root = Path(research_root).absolute()
     server = MonitorHTTPServer(('127.0.0.1', port), Handler)
     server.monitor = Monitor(root, archive_root)
-    server.html_path = Path(html_path) if html_path else Path(__file__).with_suffix('.html')
+    server.html_path = Path(html_path) if html_path else Path(__file__).with_name('training_monitor.html')
     server.js_path = server.html_path.with_name('training_monitor_charts.js')
     started = datetime.now(timezone.utc)
     server.health = {'service': SERVICE, 'version': VERSION, 'pid': os.getpid(),
@@ -1255,7 +1255,7 @@ def registration(server):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--root', type=Path, default=Path(__file__).absolute().parents[1])
+    parser.add_argument('--root', type=Path, default=Path(__file__).absolute().parents[2])
     parser.add_argument('--archive-root', type=Path, default=Path('G:/FutsalMOT_Training'))
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--duration-hours', type=float, default=12)

@@ -1,5 +1,4 @@
 """只读训练监控的有界CPU/HTTP夹具；不接触真实run、GPU、媒体或G盘。"""
-import importlib.util
 import hashlib
 import json
 from pathlib import Path
@@ -15,9 +14,7 @@ from unittest.mock import patch
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-SPEC = importlib.util.spec_from_file_location('futsalmot_training_monitor_test_module', Path(__file__).parents[1] / 'tools/training_monitor.py')
-monitor = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(monitor)
+from tools.training_monitor import server as monitor
 
 
 def write_json(path, value):

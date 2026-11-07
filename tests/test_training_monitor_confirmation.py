@@ -1,7 +1,7 @@
 """确认监视：只读小记录，partial不当完成，失败不补分数。"""
 import hashlib,importlib.util,json,tempfile,unittest
 from pathlib import Path
-sp=importlib.util.spec_from_file_location('monitor_confirmation_test',Path(__file__).parents[1]/'tools/training_monitor.py');m=importlib.util.module_from_spec(sp);sp.loader.exec_module(m)
+from tools.training_monitor import server as m
 def put(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v),encoding='utf8')
 class ConfirmationMonitor(unittest.TestCase):
  def setUp(self):

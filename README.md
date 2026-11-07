@@ -29,7 +29,13 @@ BBox阶段已于2026-11-05完成并暂时结束：24个主表模型、48项两�
 
 ## 只读观察台
 
-[本地观察台](http://127.0.0.1:8765)显示训练与48项确认记录，页面关闭不影响任何作业。现有服务原固定截止为北京时间2026-11-07 08:00:41，不自动续期；它不是新训练入口。
+观察台位于 [`tools/training_monitor/`](tools/training_monitor/)，包含 Python 服务、页面、图表脚本和 Windows 启动入口。双击 [打开训练监控.cmd](tools/training_monitor/打开训练监控.cmd)，或在研究仓库根目录运行：
+
+```powershell
+.venv\Scripts\python.exe -B -X utf8 -m tools.training_monitor --port 18765 --open
+```
+
+[本地观察台](http://127.0.0.1:18765)显示训练与48项确认记录。启动入口会复用可信的本地服务，或按默认12小时启动新的只读会话。原会话的绝对截止时间仍记录在实验日志中。
 
 ## 提交边界
 

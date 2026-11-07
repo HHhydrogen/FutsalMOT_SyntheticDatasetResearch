@@ -5,8 +5,8 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 import argparse,json,os,sys,time
 from urllib.parse import urlsplit
 import psutil
-from training_monitor import confirmation_snapshot
-R=Path(__file__).resolve().parents[1]
+from .server import confirmation_snapshot
+R=Path(__file__).resolve().parents[2]
 class Handler(BaseHTTPRequestHandler):
  def log_message(self,*args):pass
  def do_POST(self):self.send_error(405,'read only')

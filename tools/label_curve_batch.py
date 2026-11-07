@@ -91,7 +91,7 @@ def prepare_queue(batch_dir,request):
         for key in ('admission_reference','status_reference','control_manifest_reference'):read_ref(refs[key])
     for ref in request['subset_manifest_references'].values():read_ref(ref)
     batch.mkdir();(batch/'code').mkdir();shutil.copyfile(Path(__file__),batch/'batch.py');shutil.copyfile(source,batch/'code/label_curve_bbox.py')
-    monitor=R/'tools/training_monitor.py';tree=ast.parse(monitor.read_text(encoding='utf8'));node=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='canonical_group_name');function=ast.get_source_segment(monitor.read_text(encoding='utf8'),node)
+    monitor=R/'tools/training_monitor/server.py';tree=ast.parse(monitor.read_text(encoding='utf8'));node=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='canonical_group_name');function=ast.get_source_segment(monitor.read_text(encoding='utf8'),node)
     naming='import re\nfrom datetime import datetime,timedelta,timezone\n\n'+function+'\n';(batch/'naming.py').write_text(naming,encoding='utf8',newline='\n')
     queue={**deepcopy(request),'schema_version':SCHEMA,'state':'FROZEN','created_at_utc':now(),'jobs':deepcopy(ORDER),'fresh_cpu_tests':False,'fresh_gpu_probe':False,'admission_policy':'validated_configuration_reuse','per_job_max_seconds':MAX_JOB,'per_job_additional_space_bound_bytes':SPACE,'global_deadline_utc':DEADLINE,'code_references':{'batch':reference(batch/'batch.py'),'label_curve':reference(batch/'code/label_curve_bbox.py'),'naming':reference(batch/'naming.py'),'base_code_bindings':reference(BASE/'code_bindings.json')},'known_closed_groups':deepcopy(request.get('known_closed_groups',{}))}
     write_new(batch/'queue.json',queue)

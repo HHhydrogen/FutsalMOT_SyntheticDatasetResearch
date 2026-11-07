@@ -1,4 +1,4 @@
-const test=require('node:test');const assert=require('node:assert/strict');const C=require('../tools/training_monitor_charts.js');
+const test=require('node:test');const assert=require('node:assert/strict');const C=require('../tools/training_monitor/training_monitor_charts.js');
 test('zero smoothing reproduces original without mutation',()=>{const p=[{update:1,loss:3},{update:2,loss:1}];const old=JSON.stringify(p);assert.deepEqual(C.smooth(p,'loss',0).map(x=>x.smoothed),[3,1]);assert.equal(JSON.stringify(p),old);});
 test('EMA has unbiased first value and independently computed second',()=>{const p=C.smooth([{update:1,loss:10},{update:2,loss:4}],'loss',.8);assert.ok(Math.abs(p[0].smoothed-10)<1e-12);assert.ok(Math.abs(p[1].smoothed-(.8*10+4)/1.8)<1e-12);});
 test('constant signal remains constant even at strong smoothing',()=>{for(const p of C.smooth(Array.from({length:500},(_,i)=>({update:i,loss:7})),'loss',.99))assert.ok(Math.abs(p.smoothed-7)<1e-10);});

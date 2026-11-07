@@ -1,7 +1,6 @@
 """观察台预算来自冻结协议，保留总量/阶段/真实唯一池区别。"""
-import importlib.util,unittest
-from pathlib import Path
-s=importlib.util.spec_from_file_location('budget_monitor',Path(__file__).parents[1]/'tools/training_monitor.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+import unittest
+from tools.training_monitor import server as m
 class BudgetTests(unittest.TestCase):
  def test_short_and_long_same_strategy_have_distinct_planned_budget(self):
   a=m.budget_summary({'protocol':{'updates':1500,'strategy':'R','effective_batch_size':16,'N_R':2100}})

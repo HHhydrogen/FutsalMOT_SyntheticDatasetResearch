@@ -2228,3 +2228,11 @@ BBOX-CONFIRMATION-FINAL-001收尾：UTC 2026-11-05T03:51:22.386197+00:00，原�
 README/AGENTS改为当前阶段结束与正式索引，TODO移除已过期BBox RUNNING/授权接力；6个Seg/Pose相关独立待办块原文保留。唯一日志删除36个非正式准备/CPU/安装观察/弃用诊断章节，11个Seg/Pose独立日志块逐原文保留；不新建history或平行报告树。保留的正式历史负结果与失败小收据仍可审阅；本条和bbox_cleanup_20261105.json登记退休范围，不能把已删微基准或诊断称为仍完整留存。
 
 清理后独立核280个正式小引用、主表24/辅助6/校准2/48确认summary和全部主表SEALED小SHA；40依赖源码祖先仍可读取、82个根Python源码语法编译不执行，原PT只stat不全hash。必要确认CPU回归45 PASS/0skip/37.116秒，虚构CPU夹具，无真实GT/媒体/权重/CUDA，不重训或重跑48评价。本次45检查属于删除依赖后的代码回归，不是恢复逐模型训练预检。Git忽略环境/运行/模型/缓存/本机服务与本地PDF；.gitattributes禁自动换行转换以保留科学SHA字节。Seg/Pose未提交源码和资料、UE WIP保留；旧v1架构文档/12点schema等已在工作区淘汰的跟踪删除同步纳入本次仓库收敛，不恢复旧入口。实际commit与暂存检查完成后登记到本机清理收据，避免自引用commit哈希。
+
+## BBOX-MONITOR-RESTORE-002：系统重启及Windows保留端口后的只读观察台恢复
+
+2026-11-05用户报告训练监控无法打开。只读核验显示系统本次开机为UTC08:06:02（北京16:06），上午09:43启动的8765/8766实际服务与wrapper四个身份均已退出，旧登记仍在。随后原8765恢复在socket.bind报WinError10013；netsh只读查询确认Windows TCP排除范围8712–8811同时覆盖8765/8766，无监听者，不能将其归因于实验清理或数据丢失。
+
+改用18765，只读服务沿原绝对截止2026-11-07T00:00:41.387415Z；没有修改系统端口保留/防火墙。页面评价请求改用训练监控原已支持的同源/api/confirmation，因而不再依赖单独8766接口；更新打开训练监控.cmd及README地址。训练/评价数值源、正式冻包、GT与结果不改，不重新执行实验。原8765失败日志与新派发/复核保留runs/bbox_monitor_restore_20261105_a01。
+
+新实际服务PID9892/CT1793882918.9151495、wrapper24700，完整argv绑定tools/training_monitor.py --port18765及原deadline；真实页面、JS、health、status、confirmation HTTP200，确认48/48、36000图、errors[]。13项HTTP/确认监视CPU测试通过（0.459s），原EXPERIMENTS/PAPER SHA未变。恢复收据verification.json保留；不承诺系统重启后进程继续存在，不增加自启动或延长服务。
