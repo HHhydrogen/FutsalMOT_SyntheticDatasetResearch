@@ -2236,3 +2236,7 @@ README/AGENTS改为当前阶段结束与正式索引，TODO移除已过期BBox R
 改用18765，只读服务沿原绝对截止2026-11-07T00:00:41.387415Z；没有修改系统端口保留/防火墙。页面评价请求改用训练监控原已支持的同源/api/confirmation，因而不再依赖单独8766接口；更新打开训练监控.cmd及README地址。训练/评价数值源、正式冻包、GT与结果不改，不重新执行实验。原8765失败日志与新派发/复核保留runs/bbox_monitor_restore_20261105_a01。
 
 新实际服务PID9892/CT1793882918.9151495、wrapper24700，完整argv绑定tools/training_monitor.py --port18765及原deadline；真实页面、JS、health、status、confirmation HTTP200，确认48/48、36000图、errors[]。13项HTTP/确认监视CPU测试通过（0.459s），原EXPERIMENTS/PAPER SHA未变。恢复收据verification.json保留；不承诺系统重启后进程继续存在，不增加自启动或延长服务。
+
+## BBOX-USER-DELETE-002：按截图删除四条实验记录
+
+2026-11-07用户指定删除校准R50（6563步）、校准R100（13125步）、长预算R→R和S→R（各36750步）。已在D/G盘精确删除25个目标、51627个文件、326880295855逻辑字节。长预算R→R只删除共享组内的对应子目录。R100组保留单阶段R冻结血缘引用的D端admission.json及G端budget_choice.json，SHA核对一致。正式索引现为24主表、4辅助对照和48确认，观察台清点已无这四条运行记录。删除清单和收据位于runs/bbox_delete_selected_20261107_a01。

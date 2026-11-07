@@ -3,8 +3,8 @@
   "state": "CLOSED_NO_AUTOMATIC_EXPERIMENTS",
   "at_utc": "2026-11-05T12:27:25.303757+00:00",
   "primary_training_count": 24,
-  "secondary_training_count": 6,
-  "budget_calibration_count": 2,
+  "secondary_training_count": 4,
+  "budget_calibration_count": 0,
   "confirmation_model_match_count": 48,
   "confirmation_image_inferences": 36000,
   "primary_models": [
@@ -1679,76 +1679,6 @@
     },
     {
       "category": "formal_secondary",
-      "role": "long_RR_source_control",
-      "group": "bbox_s_soccernet_seed17_core_20261102_a01",
-      "job_id": "R_to_R_seed17",
-      "seed": 17,
-      "updates": 36750,
-      "exposures": {
-        "R": 588000,
-        "S": 0
-      },
-      "metrics": {
-        "AP50_95": 0.4665311479396385,
-        "AP50": 0.899551370752138,
-        "AP75": 0.42668455855582854,
-        "AP_small": 0.26395451240516327,
-        "AP_medium": 0.45783805925092397,
-        "AP_large": 0.5448367483423882,
-        "AR_max1": 0.051739742558326626,
-        "AR_max10": 0.43326629123089305,
-        "AR_max100": 0.5537208366854385,
-        "AR_small": 0.29606299212598425,
-        "AR_medium": 0.5532186732186732,
-        "AR_large": 0.5994193548387097
-      },
-      "status_reference": {
-        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\R_to_R_seed17\\status.json",
-        "sha256": "f39f6770f0e081a56326eec54a1c89f524f9a98b54819271f16ebdcfa602a22e"
-      },
-      "job_table_reference": {
-        "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\bbox_s_soccernet_seed17_core_20261102_a01\\job_table.json",
-        "sha256": "b97371e2812779597db5bcb517ad14b10b191b8f9510ab75678bd04b71fefa68"
-      },
-      "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
-    },
-    {
-      "category": "formal_secondary",
-      "role": "long_SR_source_control",
-      "group": "main_bbox_yolo11s_soccernet_S2R_seed17_20261102_a02",
-      "job_id": "S_to_R_seed17",
-      "seed": 17,
-      "updates": 36750,
-      "exposures": {
-        "R": 105008,
-        "S": 482992
-      },
-      "metrics": {
-        "AP50_95": 0.485407098793604,
-        "AP50": 0.9154250233531986,
-        "AP75": 0.4531668334274502,
-        "AP_small": 0.3091567701594757,
-        "AP_medium": 0.4747594983177036,
-        "AP_large": 0.5675745270598338,
-        "AR_max1": 0.05189058728881737,
-        "AR_max10": 0.4310740144810941,
-        "AR_max100": 0.5773028962188255,
-        "AR_small": 0.35669291338582676,
-        "AR_medium": 0.575921375921376,
-        "AR_large": 0.6218709677419355
-      },
-      "status_reference": {
-        "path": "G:\\FutsalMOT_Training\\runs\\main_bbox_yolo11s_soccernet_S2R_seed17_20261102_a02\\S_to_R_seed17\\status.json",
-        "sha256": "89592e698b87acf84f8c0eb52032fa345b96f8852b42a622813723312ca8a3c8"
-      },
-      "job_table_reference": {
-        "path": "D:\\projects\\FutsalMOT_SyntheticDatasetResearch\\runs\\main_bbox_yolo11s_soccernet_S2R_seed17_20261102_a02\\job_table.json",
-        "sha256": "40a4a3dedb5588773c8e171cb27a92a536f073c9b4fd67b9908eec1813dcdbdf"
-      },
-      "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
-    },
-    {
-      "category": "formal_secondary",
       "role": "same_total_budget_mixed",
       "group": "main_bbox_yolo11s_soccernet_RS_seed17_20261103_a01",
       "job_id": "R_plus_S_fixed_budget_seed17",
@@ -1853,68 +1783,7 @@
       "interpretation": "development_game6_only; not a member of the 24-model independent-match confirmation matrix"
     }
   ],
-  "budget_calibrations": [
-    {
-      "category": "formal_budget_calibration",
-      "group": "bbox_s_seed17_calibration_20261101_a02",
-      "job_id": "R50_seed17",
-      "seed": 17,
-      "updates": 6563,
-      "metrics": {
-        "AP50_95": 0.5165115374980012,
-        "AP50": 0.941099523964852,
-        "AP75": 0.5056873088257927,
-        "AP_small": 0.33257477789442114,
-        "AP_medium": 0.5057760772141966,
-        "AP_large": 0.5835367728536506,
-        "AR_max1": 0.05302695092518102,
-        "AR_max10": 0.45075422365245377,
-        "AR_max100": 0.6037510056315366,
-        "AR_small": 0.38661417322834646,
-        "AR_medium": 0.6047788697788699,
-        "AR_large": 0.6348387096774194
-      },
-      "status_reference": {
-        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_seed17_calibration_20261101_a02\\R50_seed17\\status.json",
-        "sha256": "97a0193d5888ecf761fbd484dded40860de69041046ff5ed2e3b0eb12813b174"
-      },
-      "protocol_reference": {
-        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_seed17_calibration_20261101_a02\\R50_protocol.json",
-        "sha256": "0376e6e7f8c44225d1ab285fce434276cf4504480f2a32fa57b58044a9c47d79"
-      },
-      "interpretation": "predeclared endpoint budget choice; not pooled with primary1500 results"
-    },
-    {
-      "category": "formal_budget_calibration",
-      "group": "bbox_s_seed17_calibration_20261101_a03_storage500",
-      "job_id": "R100_seed17",
-      "seed": 17,
-      "updates": 13125,
-      "metrics": {
-        "AP50_95": 0.4957188790826453,
-        "AP50": 0.9264702099429764,
-        "AP75": 0.461668426939532,
-        "AP_small": 0.3492485664667982,
-        "AP_medium": 0.48508734055808056,
-        "AP_large": 0.5577072589060098,
-        "AR_max1": 0.051407884151246974,
-        "AR_max10": 0.4401146419951729,
-        "AR_max100": 0.5813757039420756,
-        "AR_small": 0.3862204724409448,
-        "AR_medium": 0.5813390663390664,
-        "AR_large": 0.6149032258064516
-      },
-      "status_reference": {
-        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_seed17_calibration_20261101_a03_storage500\\R100_seed17\\status.json",
-        "sha256": "5e974a4c73a22725fc78a3839c4495391852660fc48d8c5eee0ce261f22bcfc0"
-      },
-      "protocol_reference": {
-        "path": "G:\\FutsalMOT_Training\\runs\\bbox_s_seed17_calibration_20261101_a03_storage500\\R100_protocol.json",
-        "sha256": "e060711c6b1d981e7e61d450cf8d1401df7a81f45fb42aeaa19312fe5144ed98"
-      },
-      "interpretation": "predeclared endpoint budget choice; not pooled with primary1500 results"
-    }
-  ],
+  "budget_calibrations": [],
   "confirmation_results_reference": {
     "path": "G:\\FutsalMOT_Training\\runs\\bbox_confirmation_suite_20261105_a01\\confirmation_comparison.json",
     "sha256": "a4b108adc407141349a38c950432cf3fc5fb1548ab3bc6fa04f0ece8fd42cc19"
@@ -1954,5 +1823,11 @@
     "source_only_exception": "D:/projects/FutsalMOT_SyntheticDatasetResearch/runs/main_bbox_yolo11s_soccernet_S2R_seed17_20261103_a01/code remains an immutable source ancestor required by budget1500/short_pair/fixed_mix; it is not an executable retained experiment",
     "microbenchmark": "CPU filter benchmark removed; no formal inference acceleration claimed"
   },
-  "preservation_policy": "All approved primary/secondary/calibration results, including negative results, and their required source/GT/initialization/admission/failure/stop/control provenance remain. No GT, published synthetic data, cache, public weights, Seg/Pose or UE files deleted."
+  "preservation_policy": "Retained primary and secondary results and their required source, GT, initialization, admission and control provenance remain. The four retired runs are excluded from the live registry.",
+  "retired_by_user_20261107": [
+    "R100_seed17",
+    "R50_seed17",
+    "R_to_R_seed17",
+    "S_to_R_seed17"
+  ]
 }
